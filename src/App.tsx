@@ -10,7 +10,7 @@ import ThankYou from "./components/ThankYou";
 function App() {
   const [page, setPage] = useState<number>(0);
 
-  const FormTitles: string[] = [
+  const formTitles: string[] = [
     "Personal Info",
     "Select Your Plan",
     "Pick Add-ons",
@@ -36,7 +36,7 @@ function App() {
     <div className="App">
       <Container>
         <header>
-          <h1>{FormTitles[page]}</h1>
+          <h1>{formTitles[page]}</h1>
         </header>
         <div>{pageChange()}</div>
       </Container>
@@ -48,7 +48,7 @@ function App() {
           Go Back
         </button>
         <button
-          disabled={page === FormTitles.length - 1}
+          disabled={page === formTitles.length - 1}
           onClick={() => setPage((currPage) => currPage + 1)}
         >
           Next Step
