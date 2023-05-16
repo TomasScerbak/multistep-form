@@ -11,6 +11,7 @@ const CirleWithNumber = (props: Props) => {
     <div className={classes["circle-container"]}>
       {numberInCricle.map((number, index) => (
         <div
+          key={index}
           className={`${classes.circle} ${
             index === props.page ? `${classes["circle--active"]}` : ""
           }`}
