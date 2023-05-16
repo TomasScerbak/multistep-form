@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 import Container from "./components/UI/Container";
-import PersonalInfo from "./components/PersonalInfo";
-import YourPlan from "./components/YourPlan";
-import Addons from "./components/Addons";
-import FinishigUp from "./components/FinishigUp";
-import ThankYou from "./components/ThankYou";
+import PersonalInfo from "./components/pages/PersonalInfo";
+import YourPlan from "./components/pages/YourPlan";
+import Addons from "./components/pages/Addons";
+import FinishigUp from "./components/pages/FinishigUp";
+import ThankYou from "./components/pages/ThankYou";
 import ProgressBar from "./components/UI/ProgressBar";
 
 function App() {
