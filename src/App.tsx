@@ -43,12 +43,14 @@ function App() {
         <div>{pageChange()}</div>
       </Container>
       <footer>
-        <button
-          disabled={page === 0}
-          onClick={() => setPage((currPage) => currPage - 1)}
-        >
-          Go Back
-        </button>
+        {page !== 0 ? (
+          <button
+            disabled={page === 0}
+            onClick={() => setPage((currPage) => currPage - 1)}
+          >
+            Go Back
+          </button>
+        ) : null}
         <button
           disabled={page === formTitles.length - 1}
           onClick={() => setPage((currPage) => currPage + 1)}
