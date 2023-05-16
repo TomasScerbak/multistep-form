@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <ProgressBar />
+        <ProgressBar page={page} />
         <header>
           <h1>{formTitles[page]}</h1>
         </header>
