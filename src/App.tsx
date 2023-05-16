@@ -40,7 +40,7 @@ function App() {
         </header>
         <div>{pageChange()}</div>
       </Container>
-      <div>
+      <footer>
         <button
           disabled={page === 0}
           onClick={() => setPage((currPage) => currPage - 1)}
@@ -53,7 +53,7 @@ function App() {
         >
           Next Step
         </button>
-      </div>
+      </footer>
     </div>
   );
 }
