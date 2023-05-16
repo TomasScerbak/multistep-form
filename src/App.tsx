@@ -6,6 +6,7 @@ import YourPlan from "./components/YourPlan";
 import Addons from "./components/Addons";
 import FinishigUp from "./components/FinishigUp";
 import ThankYou from "./components/ThankYou";
+import ProgressBar from "./components/UI/ProgressBar";
 
 function App() {
   const [page, setPage] = useState<number>(0);
@@ -35,6 +36,7 @@ function App() {
   return (
     <div className="App">
       <Container>
+        <ProgressBar />
         <header>
           <h1>{formTitles[page]}</h1>
         </header>
