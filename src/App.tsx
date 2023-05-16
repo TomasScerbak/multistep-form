@@ -51,7 +51,7 @@ function App() {
           disabled={page === formTitles.length - 1}
           onClick={() => setPage((currPage) => currPage + 1)}
         >
-          Next Step
+          {page === 3 ? "Confirm" : "Next Step"}
         </button>
       </footer>
     </div>
