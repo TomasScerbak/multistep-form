@@ -28,6 +28,7 @@
 
 .circle--active {
   color: var(--marine-blue);
-  background-color: var(--pastel-blue);
-  border: 1px solid var(--pastel-blue);
+  background-color: var(--light-blue);
+  border: 1px solid var(--light-blue);
+  transition: all 1s;
 }
