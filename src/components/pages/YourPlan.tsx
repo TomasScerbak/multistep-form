@@ -1,7 +1,7 @@
 import IconAdvanced from "../../assets/icon-advanced.svg";
 import IconArcade from "../../assets/icon-arcade.svg";
 import IconPro from "../../assets/icon-pro.svg";
-import CheckBox from "../UI/InputSwitch";
+import InputSwitch from "../UI/InputSwitch";
 import PlanButton from "../UI/PlanButton";
 
 const YourPlan = () => {
@@ -35,7 +35,7 @@ const YourPlan = () => {
         />
       ))}
       <div>
-        <CheckBox />
+        <InputSwitch />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import classes from "./InputSwitch.module.css";
 
-const CheckBox = () => {
+const InputSwitch = () => {
   return (
     <div>
       <span>Monthly</span>
@@ -13,4 +13,4 @@ const CheckBox = () => {
   );
 };
 
-export default CheckBox;
+export default InputSwitch;
