@@ -21,8 +21,9 @@ const Addons = () => {
   return (
     <div>
       <h2>Add-ons help enhance your gaming experience.</h2>
-      {addons.map((addon) => (
+      {addons.map((addon, index) => (
         <Checkbox
+          key={index}
           header={addon.header}
           text={addon.text}
           payment={addon.payment}

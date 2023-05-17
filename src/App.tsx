@@ -21,7 +21,9 @@ function App() {
 
   const pageChange = () => {
     if (page === 0) {
-      return <PersonalInfo />;
+      return (
+        <PersonalInfo description="Please provide your name, email address, and phone number." />
+      );
     } else if (page === 1) {
       return <YourPlan />;
     } else if (page === 2) {

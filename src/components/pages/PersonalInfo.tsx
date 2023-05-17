@@ -1,12 +1,25 @@
+import { useState } from "react";
+
 type Props = {
-  header: string;
   description: string;
 };
 
-const PersonalInfo = () => {
+type UserInputs = {
+  username: string;
+  email: string;
+  phoneNumber: string;
+};
+
+const PersonalInfo = (props: Props) => {
+  const [userInputs, setUserInputs] = useState<UserInputs>({
+    username: "",
+    email: "",
+    phoneNumber: "",
+  });
+
   return (
     <div>
-      <h2>Please provide your name, email address, and phone number.</h2>
+      <h2>{props.description}</h2>
       <form>
         <div>
           <label htmlFor="name">Name</label>
