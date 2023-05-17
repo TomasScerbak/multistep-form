@@ -1,37 +1,51 @@
-import { useState } from "react";
+import { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { saveUserInputs } from "../../store/userInputsSlice";
+import { RootState } from "../../store";
 
 type Props = {
   description: string;
 };
 
-type UserInputs = {
-  username: string;
-  email: string;
-  phoneNumber: string;
-};
-
 const PersonalInfo = (props: Props) => {
-  const [userInputs, setUserInputs] = useState<UserInputs>({
-    username: "",
-    email: "",
-    phoneNumber: "",
-  });
+  const dispatch = useDispatch();
+  const userInputs = useSelector((state: RootState) => state.userInputs);
+
+  const usernameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const phoneNumberRef = useRef<HTMLInputElement>(null);
+
+  const handleSubmit = (event: React.SyntheticEvent) => {
+    event.preventDefault();
+
+    const username = usernameRef.current?.value;
+    const email = emailRef.current?.value;
+    const phoneNumber = phoneNumberRef.current?.value;
+
+    dispatch(
+      saveUserInputs({
+        username,
+        email,
+        phoneNumber,
+      })
+    );
+  };
 
   return (
     <div>
       <h2>{props.description}</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name</label>
-          <input type="text" name="name" />
+          <input ref={usernameRef} type="text" name="name" />
         </div>
         <div>
           <label htmlFor="email">Email Address</label>
-          <input type="email" name="email" />
+          <input ref={emailRef} type="email" name="email" />
         </div>
         <div>
           <label htmlFor="phone">Phone Number</label>
-          <input type="tel" name="phone" />
+          <input ref={phoneNumberRef} type="tel" name="phone" />
         </div>
       </form>
     </div>
