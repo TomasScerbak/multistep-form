@@ -1,7 +1,7 @@
 type Props = {
   image: string;
   type: string;
-  payment: string;
+  payment: number;
 };
 
 const PlanButton = (props: Props) => {

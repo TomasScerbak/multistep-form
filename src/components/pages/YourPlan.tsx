@@ -9,17 +9,17 @@ const YourPlan = () => {
     {
       image: IconAdvanced,
       type: "Advanced",
-      payment: `$${9}/mo`,
+      payment: 9,
     },
     {
       image: IconArcade,
       type: "Arcade",
-      payment: `$${12}/mo`,
+      payment: 12,
     },
     {
       image: IconPro,
       type: "Pro",
-      payment: `$${15}/mo`,
+      payment: 15,
     },
   ];
 
