@@ -1,7 +1,7 @@
 import IconAdvanced from "../../assets/icon-advanced.svg";
 import IconArcade from "../../assets/icon-arcade.svg";
 import IconPro from "../../assets/icon-pro.svg";
-import CheckBox from "../UI/CheckBox";
+import CheckBox from "../UI/InputSwitch";
 import PlanButton from "../UI/PlanButton";
 
 const YourPlan = () => {
@@ -26,7 +26,6 @@ const YourPlan = () => {
   return (
     <div>
       <h2>You have the option of monthly or yearly billing.</h2>
-      <div></div>
       {planVariations.map((variant, index) => (
         <PlanButton
           key={index}

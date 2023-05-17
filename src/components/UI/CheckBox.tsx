@@ -1,14 +1,20 @@
-import classes from "./CheckBox.module.css";
+import classes from "./Checkbox.module.css";
 
-const CheckBox = () => {
+type Props = {
+  header: string;
+  text: string;
+  payment: number;
+};
+
+const CheckBox = (props: Props) => {
   return (
-    <div>
-      <span>Monthly</span>
-      <label className={classes.switch}>
-        <input type="checkbox" />
-        <span className={classes.slider}></span>
-      </label>
-      <span>Yearly</span>
+    <div className={classes["checkbox-wrapper"]}>
+      <input type="checkbox"></input>
+      <div>
+        <h3>{props.header}</h3>
+        <p>{props.text}</p>
+      </div>
+      <span>{props.payment}</span>
     </div>
   );
 };
