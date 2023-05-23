@@ -8,8 +8,29 @@ import FinishigUp from "./components/pages/FinishigUp";
 import ThankYou from "./components/pages/ThankYou";
 import ProgressBar from "./components/UI/ProgressBar";
 
+type FormData = {
+  username: string;
+  email: string;
+  phoneNumber: string;
+  plan: {};
+  addon: {};
+};
+
 function App() {
   const [page, setPage] = useState<number>(0);
+  const [formData, setFormData] = useState<FormData>({
+    username: "",
+    email: "",
+    phoneNumber: "",
+    plan: {
+      type: "",
+      payment: "",
+    },
+    addon: {
+      type: "",
+      payment: "",
+    },
+  });
 
   const formTitles: string[] = [
     "Personal Info",
@@ -22,7 +43,11 @@ function App() {
   const pageChange = () => {
     if (page === 0) {
       return (
-        <PersonalInfo description="Please provide your name, email address, and phone number." />
+        <PersonalInfo
+          formData={formData}
+          setFormData={setFormData}
+          description="Please provide your name, email address, and phone number."
+        />
       );
     } else if (page === 1) {
       return <YourPlan />;

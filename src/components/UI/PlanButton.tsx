@@ -6,7 +6,7 @@ type Props = {
 
 const PlanButton = (props: Props) => {
   return (
-    <button>
+    <div>
       <div>
         <img src={props.image}></img>
       </div>
@@ -14,7 +14,8 @@ const PlanButton = (props: Props) => {
         <div>{props.type}</div>
         <div>{props.payment}</div>
       </div>
-    </button>
+      <input type={props.type}></input>
+    </div>
   );
 };
 
