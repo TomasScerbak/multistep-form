@@ -11,13 +11,24 @@ type Props = {
 
 const PersonalInfo = (props: Props) => {
   const dispatch = useDispatch();
-  const userInpts = useSelector((state: RootState) => state.userInputs);
+  const userInpts = useSelector((state: RootState) => state.persistedReducer);
 
-  console.log(userInpts);
+  console.log("user inputs from store", userInpts);
 
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const phoneNumberRef = useRef<HTMLInputElement>(null);
+
+  const onInputChangeHandler = () => {
+    dispatch(
+      saveUserPersonalData({
+        ...props.formData,
+        username: nameRef.current?.value,
+        email: emailRef.current?.value,
+        phoneNumber: phoneNumberRef.current?.value,
+      })
+    );
+  };
 
   return (
     <div>
@@ -26,14 +37,7 @@ const PersonalInfo = (props: Props) => {
         <div>
           <label htmlFor="name">Name</label>
           <input
-            onChange={() =>
-              dispatch(
-                saveUserPersonalData({
-                  ...props.formData,
-                  username: nameRef.current?.value,
-                })
-              )
-            }
+            onChange={onInputChangeHandler}
             type="text"
             name="name"
             ref={nameRef}
@@ -42,14 +46,7 @@ const PersonalInfo = (props: Props) => {
         <div>
           <label htmlFor="email">Email Address</label>
           <input
-            onChange={() =>
-              dispatch(
-                saveUserPersonalData({
-                  ...props.formData,
-                  email: emailRef.current?.value,
-                })
-              )
-            }
+            onChange={onInputChangeHandler}
             type="email"
             name="email"
             ref={emailRef}
@@ -58,14 +55,7 @@ const PersonalInfo = (props: Props) => {
         <div>
           <label htmlFor="phone">Phone Number</label>
           <input
-            onChange={() =>
-              dispatch(
-                saveUserPersonalData({
-                  ...props.formData,
-                  phoneNumber: phoneNumberRef.current?.value,
-                })
-              )
-            }
+            onChange={onInputChangeHandler}
             type="tel"
             name="phone"
             ref={phoneNumberRef}

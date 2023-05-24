@@ -9,6 +9,8 @@ import PlanButton from "../UI/PlanButton";
 const YourPlan = () => {
   const [selectedValue, setSelectedValue] = useState<string>();
 
+  console.log(selectedValue);
+
   const planVariations = [
     {
       image: IconAdvanced,
