@@ -1,14 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 type UserPlanSelection = {
-  plan: {};
+  plan: string;
+  payment: number;
 };
 
 const initialState: UserPlanSelection = {
-  plan: {
-    type: "",
-    payment: null,
-  },
+  plan: "",
+  payment: 0,
 };
 
 export const userPlanSelection = createSlice({
@@ -18,10 +17,8 @@ export const userPlanSelection = createSlice({
     saveUserPlanSelection: (state, action) => {
       return {
         ...state,
-        plan: {
-          type: action.payload.type,
-          payment: action.payload.payment,
-        },
+        type: action.payload.type,
+        payment: action.payload.payment,
       };
     },
   },

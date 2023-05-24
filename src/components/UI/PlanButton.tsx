@@ -7,15 +7,15 @@ type Props = {
   type: string;
   name: string;
   id: string;
-  onChange: React.MouseEventHandler<HTMLInputElement>;
-  checked: boolean;
+  // checked: boolean;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
 };
 
 const PlanButton = (props: Props) => {
   return (
     <label className={classes.plan}>
       <input
-        onClick={props.onChange}
+        onChange={props.onChange}
         id={props.id}
         name={props.name}
         type={props.type}

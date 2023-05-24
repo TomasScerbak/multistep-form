@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { RootState } from "../../store";
+import { saveUserPlanSelection } from "../../store/userPlanSlice";
 
 import IconAdvanced from "../../assets/icon-advanced.svg";
 import IconArcade from "../../assets/icon-arcade.svg";
@@ -7,9 +9,10 @@ import InputSwitch from "../UI/InputSwitch";
 import PlanButton from "../UI/PlanButton";
 
 const YourPlan = () => {
-  const [selectedValue, setSelectedValue] = useState<string>();
+  const dispatch = useDispatch();
+  const userPlan = useSelector((state: RootState) => state.persistedReducer);
 
-  console.log(selectedValue);
+  console.log(userPlan);
 
   const planVariations = [
     {
@@ -34,7 +37,14 @@ const YourPlan = () => {
       <h2>You have the option of monthly or yearly billing.</h2>
       {planVariations.map((plan, index) => (
         <PlanButton
-          onChange={() => setSelectedValue(plan.variation)}
+          onChange={() =>
+            dispatch(
+              saveUserPlanSelection({
+                type: plan.variation,
+                payment: plan.payment,
+              })
+            )
+          }
           id="radio-button"
           type="radio"
           key={index}
@@ -42,7 +52,6 @@ const YourPlan = () => {
           value={plan.variation}
           name="plan"
           payment={plan.payment}
-          checked={selectedValue === plan.variation}
         />
       ))}
       <div>
