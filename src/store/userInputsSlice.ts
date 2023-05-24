@@ -1,32 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type UserInputTypes = {
+type UserPersonalData = {
   username: string;
   email: string;
   phoneNumber: string;
-  plan: {};
-  addon: {};
 };
 
-const initialState: UserInputTypes = {
+const initialState: UserPersonalData = {
   username: "",
   email: "",
   phoneNumber: "",
-  plan: {
-    type: "",
-    payment: "",
-  },
-  addon: {
-    type: "",
-    payment: "",
-  },
 };
 
-export const userInputsSlice = createSlice({
-  name: "userInputs",
+export const userPersonalData = createSlice({
+  name: "userPersonalData",
   initialState,
   reducers: {
-    saveUserInputs: (state, action) => {
+    saveUserPersonalData: (state, action) => {
       return {
         ...state,
         username: action.payload.username,
@@ -37,6 +27,6 @@ export const userInputsSlice = createSlice({
   },
 });
 
-export const { saveUserInputs } = userInputsSlice.actions;
+export const { saveUserPersonalData } = userPersonalData.actions;
 
-export default userInputsSlice;
+export default userPersonalData;
