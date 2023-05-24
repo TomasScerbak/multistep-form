@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import userInputsReducer from "./userInputsSlice";
+import userPersonalDataReducer from "./userPersonalDataSlice";
 
 const store = configureStore({
   reducer: {
-    userInputs: userInputsReducer.reducer,
+    userInputs: userPersonalDataReducer.reducer,
   },
 });
 

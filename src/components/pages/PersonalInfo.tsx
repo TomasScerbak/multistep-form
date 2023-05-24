@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import { saveUserInputs } from "../../store/userInputsSlice";
+import { saveUserPersonalData } from "../../store/userPersonalDataSlice";
 import { useRef } from "react";
 import { RootState } from "../../store";
 
@@ -28,7 +28,7 @@ const PersonalInfo = (props: Props) => {
           <input
             onChange={() =>
               dispatch(
-                saveUserInputs({
+                saveUserPersonalData({
                   ...props.formData,
                   username: nameRef.current?.value,
                 })
@@ -44,7 +44,7 @@ const PersonalInfo = (props: Props) => {
           <input
             onChange={() =>
               dispatch(
-                saveUserInputs({
+                saveUserPersonalData({
                   ...props.formData,
                   email: emailRef.current?.value,
                 })
@@ -60,7 +60,7 @@ const PersonalInfo = (props: Props) => {
           <input
             onChange={() =>
               dispatch(
-                saveUserInputs({
+                saveUserPersonalData({
                   ...props.formData,
                   phoneNumber: phoneNumberRef.current?.value,
                 })
