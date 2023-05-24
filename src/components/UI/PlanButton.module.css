@@ -1,0 +1,39 @@
+.plan {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid var(--light-grey);
+  border-radius: 0.8rem;
+  padding: 1.4rem 0 1.8rem 1.6rem;
+}
+
+/* HIDE RADIO */
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.plan-image {
+  margin-right: 1.4rem;
+}
+
+.variation {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--marine-blue);
+  line-height: 1.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.payment {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #9699aa;
+}
+
+.plan-active {
+  background-color: var(--alabaster);
+  border: 1px solid var(--purplish-blue);
+}

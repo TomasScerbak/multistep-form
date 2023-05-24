@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import IconAdvanced from "../../assets/icon-advanced.svg";
 import IconArcade from "../../assets/icon-arcade.svg";
 import IconPro from "../../assets/icon-pro.svg";
@@ -5,20 +7,22 @@ import InputSwitch from "../UI/InputSwitch";
 import PlanButton from "../UI/PlanButton";
 
 const YourPlan = () => {
+  const [selectedValue, setSelectedValue] = useState<string>();
+
   const planVariations = [
     {
       image: IconAdvanced,
-      type: "Advanced",
+      variation: "Advanced",
       payment: 9,
     },
     {
       image: IconArcade,
-      type: "Arcade",
+      variation: "Arcade",
       payment: 12,
     },
     {
       image: IconPro,
-      type: "Pro",
+      variation: "Pro",
       payment: 15,
     },
   ];
@@ -26,12 +30,17 @@ const YourPlan = () => {
   return (
     <div>
       <h2>You have the option of monthly or yearly billing.</h2>
-      {planVariations.map((variant, index) => (
+      {planVariations.map((plan, index) => (
         <PlanButton
+          onChange={() => setSelectedValue(plan.variation)}
+          id="radio-button"
+          type="radio"
           key={index}
-          image={variant.image}
-          type={variant.type}
-          payment={variant.payment}
+          image={plan.image}
+          value={plan.variation}
+          name="plan"
+          payment={plan.payment}
+          checked={selectedValue === plan.variation}
         />
       ))}
       <div>

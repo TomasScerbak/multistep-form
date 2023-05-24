@@ -4,12 +4,22 @@ type UserInputTypes = {
   username: string;
   email: string;
   phoneNumber: string;
+  plan: {};
+  addon: {};
 };
 
 const initialState: UserInputTypes = {
   username: "",
   email: "",
   phoneNumber: "",
+  plan: {
+    type: "",
+    payment: "",
+  },
+  addon: {
+    type: "",
+    payment: "",
+  },
 };
 
 export const userInputsSlice = createSlice({
