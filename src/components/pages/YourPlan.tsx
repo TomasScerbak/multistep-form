@@ -1,14 +1,13 @@
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { RootState } from "../../store";
 import { saveUserPlanSelection } from "../../store/userPlanSlice";
+import { saveStatus } from "../../store/inputSwitchSlice";
 
 import IconAdvanced from "../../assets/icon-advanced.svg";
 import IconArcade from "../../assets/icon-arcade.svg";
 import IconPro from "../../assets/icon-pro.svg";
 import InputSwitch from "../UI/InputSwitch";
 import PlanButton from "../UI/PlanButton";
-import { useState } from "react";
-import { saveStatus } from "../../store/inputSwitchSlice";
 
 const planVariations = [
   {
@@ -32,8 +31,6 @@ const YourPlan = () => {
   const dispatch = useDispatch();
   const userPlan = useSelector((state: RootState) => state.persistedReducer);
   const inputSwitch = useSelector((state: RootState) => state.persistedReducer);
-
-  const [clicked, setClicked] = useState<boolean>(false);
 
   const inputSwitchHandler = () => {
     dispatch(saveStatus(!inputSwitch.inputSwitch.clicked));
