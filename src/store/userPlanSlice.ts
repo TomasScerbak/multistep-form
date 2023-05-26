@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 type UserPlanSelection = {
-  plan: string;
+  type: string;
   payment: number;
 };
 
 const initialState: UserPlanSelection = {
-  plan: "",
+  type: "",
   payment: 0,
 };
 

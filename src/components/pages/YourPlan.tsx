@@ -7,30 +7,37 @@ import IconArcade from "../../assets/icon-arcade.svg";
 import IconPro from "../../assets/icon-pro.svg";
 import InputSwitch from "../UI/InputSwitch";
 import PlanButton from "../UI/PlanButton";
+import { useState } from "react";
+
+const planVariations = [
+  {
+    image: IconAdvanced,
+    variation: "Advanced",
+    payment: 9,
+  },
+  {
+    image: IconArcade,
+    variation: "Arcade",
+    payment: 12,
+  },
+  {
+    image: IconPro,
+    variation: "Pro",
+    payment: 15,
+  },
+];
 
 const YourPlan = () => {
   const dispatch = useDispatch();
   const userPlan = useSelector((state: RootState) => state.persistedReducer);
 
-  console.log(userPlan);
+  const [clicked, setClicked] = useState<boolean>(false);
 
-  const planVariations = [
-    {
-      image: IconAdvanced,
-      variation: "Advanced",
-      payment: 9,
-    },
-    {
-      image: IconArcade,
-      variation: "Arcade",
-      payment: 12,
-    },
-    {
-      image: IconPro,
-      variation: "Pro",
-      payment: 15,
-    },
-  ];
+  const inputSwitchHandler = () => {
+    setClicked((prev) => (!prev ? true : false));
+  };
+
+  console.log(userPlan);
 
   return (
     <div>
@@ -41,7 +48,7 @@ const YourPlan = () => {
             dispatch(
               saveUserPlanSelection({
                 type: plan.variation,
-                payment: plan.payment,
+                payment: `${clicked ? plan.payment * 10 : plan.payment}`,
               })
             )
           }
@@ -51,11 +58,12 @@ const YourPlan = () => {
           image={plan.image}
           value={plan.variation}
           name="plan"
-          payment={plan.payment}
+          payment={clicked ? plan.payment * 10 : plan.payment}
+          checked={plan.variation === userPlan.userPlan.type}
         />
       ))}
       <div>
-        <InputSwitch />
+        <InputSwitch onClick={inputSwitchHandler} />
       </div>
     </div>
   );

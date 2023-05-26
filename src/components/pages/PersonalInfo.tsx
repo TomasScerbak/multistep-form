@@ -11,9 +11,9 @@ type Props = {
 
 const PersonalInfo = (props: Props) => {
   const dispatch = useDispatch();
-  const userInpts = useSelector((state: RootState) => state.persistedReducer);
+  const userInputs = useSelector((state: RootState) => state.persistedReducer);
 
-  console.log("user inputs from store", userInpts);
+  console.log(userInputs);
 
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
