@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage";
 
 import userPersonalDataReducer from "./userPersonalDataSlice";
 import userPlanSelectionReducer from "./userPlanSlice";
+import inputSwitchReducer from "./inputSwitchSlice";
 
 const persistConfig = {
   key: "root",
@@ -14,6 +15,7 @@ const persistConfig = {
 const reducer = combineReducers({
   userInputs: userPersonalDataReducer.reducer,
   userPlan: userPlanSelectionReducer.reducer,
+  inputSwitch: inputSwitchReducer.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

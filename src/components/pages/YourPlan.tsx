@@ -8,6 +8,7 @@ import IconPro from "../../assets/icon-pro.svg";
 import InputSwitch from "../UI/InputSwitch";
 import PlanButton from "../UI/PlanButton";
 import { useState } from "react";
+import { saveStatus } from "../../store/inputSwitchSlice";
 
 const planVariations = [
   {
@@ -30,14 +31,16 @@ const planVariations = [
 const YourPlan = () => {
   const dispatch = useDispatch();
   const userPlan = useSelector((state: RootState) => state.persistedReducer);
+  const inputSwitch = useSelector((state: RootState) => state.persistedReducer);
 
   const [clicked, setClicked] = useState<boolean>(false);
 
   const inputSwitchHandler = () => {
-    setClicked((prev) => (!prev ? true : false));
+    dispatch(saveStatus(!inputSwitch.inputSwitch.clicked));
   };
 
   console.log(userPlan);
+  console.log(inputSwitch);
 
   return (
     <div>
@@ -48,7 +51,11 @@ const YourPlan = () => {
             dispatch(
               saveUserPlanSelection({
                 type: plan.variation,
-                payment: `${clicked ? plan.payment * 10 : plan.payment}`,
+                payment: `${
+                  inputSwitch.inputSwitch.clicked
+                    ? plan.payment * 10
+                    : plan.payment
+                }`,
               })
             )
           }
@@ -58,7 +65,9 @@ const YourPlan = () => {
           image={plan.image}
           value={plan.variation}
           name="plan"
-          payment={clicked ? plan.payment * 10 : plan.payment}
+          payment={
+            inputSwitch.inputSwitch.clicked ? plan.payment * 10 : plan.payment
+          }
           checked={plan.variation === userPlan.userPlan.type}
         />
       ))}
