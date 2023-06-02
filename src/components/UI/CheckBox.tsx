@@ -1,6 +1,7 @@
 import classes from "./Checkbox.module.css";
 
 type Props = {
+  id: number;
   header: string;
   text: string;
   payment: number;

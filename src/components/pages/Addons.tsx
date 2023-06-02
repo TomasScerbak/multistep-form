@@ -23,6 +23,7 @@ const Addons = () => {
       <h2>Add-ons help enhance your gaming experience.</h2>
       {addons.map((addon, index) => (
         <Checkbox
+          id={index}
           key={index}
           header={addon.header}
           text={addon.text}
