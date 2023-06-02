@@ -5,12 +5,13 @@ type Props = {
   header: string;
   text: string;
   payment: number;
+  onClick: React.MouseEventHandler<HTMLInputElement>;
 };
 
 const CheckBox = (props: Props) => {
   return (
     <div className={classes["checkbox-wrapper"]}>
-      <input type="checkbox"></input>
+      <input onClick={props.onClick} type="checkbox"></input>
       <div>
         <h3>{props.header}</h3>
         <p>{props.text}</p>

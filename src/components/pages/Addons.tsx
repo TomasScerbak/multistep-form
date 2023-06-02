@@ -1,6 +1,9 @@
+import { useState } from "react";
 import Checkbox from "../UI/Checkbox";
 
 const Addons = () => {
+  const [isChecked, setIsChecked] = useState();
+
   const addons = [
     {
       header: "Online Service",
@@ -18,11 +21,18 @@ const Addons = () => {
       payment: 2,
     },
   ];
+
+  const isCheckedHandler = (event) => {
+    setIsChecked(event.target);
+    console.log(isChecked);
+  };
+
   return (
     <div>
       <h2>Add-ons help enhance your gaming experience.</h2>
       {addons.map((addon, index) => (
         <Checkbox
+          onClick={isCheckedHandler}
           id={index}
           key={index}
           header={addon.header}
