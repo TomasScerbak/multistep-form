@@ -14,7 +14,7 @@ const CheckBox = (props: Props) => {
         <h3>{props.header}</h3>
         <p>{props.text}</p>
       </div>
-      <span>{props.payment}</span>
+      <span>+ ${props.payment}/mo</span>
     </div>
   );
 };
