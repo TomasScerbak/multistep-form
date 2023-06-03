@@ -1,36 +1,39 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 type addonCheckbox = {
-  addons: [{ id: number; type: string; payment: number }];
+  addons: { id: number; header: string; payment: number }[];
 };
 
 const initialState: addonCheckbox = {
-  addons: [
-    {
-      id: 0,
-      type: "",
-      payment: 0,
-    },
-  ],
+  addons: [],
 };
 
 export const addonsSlice = createSlice({
   name: "addons",
   initialState,
   reducers: {
-    saveAddons: (state, action) => {
+    saveAddon: (state, action) => {
       const newAddon = action.payload;
-      const existingAddon = state.addons.map(
+      const existingAddon = state.addons.find(
         (addon) => addon.id === newAddon.id
       );
 
       if (!existingAddon) {
-        state.addons.push(newAddon);
+        state.addons.push({
+          id: newAddon.id,
+          header: newAddon.header,
+          payment: newAddon.payment,
+        });
       }
+    },
+
+    removeAddon: (state, action) => {
+      const id = action.payload;
+      state.addons = state.addons.filter((addon) => addon.id !== id);
     },
   },
 });
 
-export const { saveAddons } = addonsSlice.actions;
+export const { saveAddon, removeAddon } = addonsSlice.actions;
 
 export default addonsSlice;

@@ -1,10 +1,11 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import { persistReducer } from "redux-persist";
+import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 import userPersonalDataReducer from "./userPersonalDataSlice";
 import userPlanSelectionReducer from "./userPlanSlice";
 import inputSwitchReducer from "./inputSwitchSlice";
+import addonReducer from "./addonsSlice";
 
 const persistConfig = {
   key: "root",
@@ -16,6 +17,7 @@ const reducer = combineReducers({
   userInputs: userPersonalDataReducer.reducer,
   userPlan: userPlanSelectionReducer.reducer,
   inputSwitch: inputSwitchReducer.reducer,
+  addon: addonReducer.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);
