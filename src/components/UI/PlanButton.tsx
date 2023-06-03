@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 import classes from "./PlanButton.module.css";
 
 type Props = {
@@ -12,6 +14,8 @@ type Props = {
 };
 
 const PlanButton = (props: Props) => {
+  const inputSwitch = useSelector((state: RootState) => state.persistedReducer);
+
   return (
     <label
       className={`${classes.plan} ${
@@ -29,7 +33,11 @@ const PlanButton = (props: Props) => {
       </div>
       <div>
         <div className={classes.variation}>{props.value}</div>
-        <div className={classes.payment}>{`$${props.payment}/mo`}</div>
+        <div className={classes.payment}>{`$${
+          inputSwitch.inputSwitch.clicked === true
+            ? props.payment * 10
+            : props.payment
+        }/mo`}</div>
       </div>
     </label>
   );

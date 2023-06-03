@@ -32,12 +32,12 @@ const YourPlan = () => {
   const userPlan = useSelector((state: RootState) => state.persistedReducer);
   const inputSwitch = useSelector((state: RootState) => state.persistedReducer);
 
+  console.log(userPlan);
+  console.log(inputSwitch);
+
   const inputSwitchHandler = () => {
     dispatch(saveStatus(!inputSwitch.inputSwitch.clicked));
   };
-
-  console.log(userPlan);
-  console.log(inputSwitch);
 
   return (
     <div>
@@ -48,11 +48,10 @@ const YourPlan = () => {
             dispatch(
               saveUserPlanSelection({
                 type: plan.variation,
-                payment: `${
-                  inputSwitch.inputSwitch.clicked
+                payment:
+                  inputSwitch.inputSwitch.clicked === true
                     ? plan.payment * 10
-                    : plan.payment
-                }`,
+                    : plan.payment,
               })
             )
           }
@@ -62,9 +61,7 @@ const YourPlan = () => {
           image={plan.image}
           value={plan.variation}
           name="plan"
-          payment={
-            inputSwitch.inputSwitch.clicked ? plan.payment * 10 : plan.payment
-          }
+          payment={plan.payment}
           checked={plan.variation === userPlan.userPlan.type}
         />
       ))}

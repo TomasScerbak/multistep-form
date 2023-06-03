@@ -28,6 +28,10 @@ const store = configureStore({
   },
 });
 
+const persistor = persistStore(store);
+
+persistor.purge();
+
 export default store;
 
 export type RootState = ReturnType<typeof store.getState>;

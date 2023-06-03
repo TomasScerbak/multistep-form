@@ -14,6 +14,7 @@ type Props = {
 const CheckBox = (props: Props) => {
   const dispatch = useDispatch();
   const addon = useSelector((state: RootState) => state.persistedReducer);
+  const inputSwitch = useSelector((state: RootState) => state.persistedReducer);
 
   console.log(addon);
 
@@ -25,7 +26,10 @@ const CheckBox = (props: Props) => {
         saveAddon({
           id: props.id,
           header: props.header,
-          payment: props.payment,
+          payment:
+            inputSwitch.inputSwitch.clicked === true
+              ? props.payment * 10
+              : props.payment,
         })
       );
     } else {
@@ -39,7 +43,11 @@ const CheckBox = (props: Props) => {
         <h3>{props.header}</h3>
         <p>{props.text}</p>
       </div>
-      <span>+ ${props.payment}/mo</span>
+      <span>
+        + $
+        {inputSwitch.inputSwitch.clicked ? props.payment * 10 : props.payment}
+        /mo
+      </span>
     </div>
   );
 };
