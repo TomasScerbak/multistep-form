@@ -38,6 +38,7 @@ const PlanButton = (props: Props) => {
             ? props.payment * 10
             : props.payment
         }/mo`}</div>
+        {inputSwitch.inputSwitch.clicked ? <p>2 months free</p> : null}
       </div>
     </label>
   );
