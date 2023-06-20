@@ -1,5 +1,5 @@
 const ThankYou = () => {
-  return <div>ThankYou</div>;
+  return <div>Thank you</div>;
 };
 
 export default ThankYou;

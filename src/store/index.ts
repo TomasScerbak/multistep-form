@@ -26,11 +26,19 @@ const store = configureStore({
   reducer: {
     persistedReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 const persistor = persistStore(store);
 
-persistor.purge();
+window.addEventListener("beforeunload", (event) => {
+  event.preventDefault();
+
+  persistor.pause();
+});
 
 export default store;
 
