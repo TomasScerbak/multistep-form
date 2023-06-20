@@ -37,7 +37,7 @@ const persistor = persistStore(store);
 window.addEventListener("beforeunload", (event) => {
   event.preventDefault();
 
-  persistor.pause();
+  persistor.purge().then((text) => console.log(text));
 });
 
 export default store;

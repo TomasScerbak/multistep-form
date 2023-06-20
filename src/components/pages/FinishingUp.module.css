@@ -1,0 +1,10 @@
+.finalized__plan-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.finalized__plan {
+  display: flex;
+  align-items: center;
+}

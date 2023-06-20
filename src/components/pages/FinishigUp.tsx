@@ -1,31 +1,36 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 
+import classes from "./FinishingUp.module.css";
+
 const FinishigUp = () => {
   const userPlan = useSelector((state: RootState) => state.persistedReducer);
   const inputSwitch = useSelector((state: RootState) => state.persistedReducer);
+  const planPayment = useSelector((state: RootState) => state.persistedReducer);
 
   return (
     <div>
-      <h2>Double-check everything looks OK before confirming.</h2>
-      <div>
+      <header>
+        <h2>Double-check everything looks OK before confirming.</h2>
+      </header>
+      <div className={classes["finalized__plan-container"]}>
         <div>
-          <div>
-            <p>{userPlan.userPlan.type}</p>
-            <p>
+          <div className={classes["finalized__plan"]}>
+            <div>{userPlan.userPlan.type}</div>
+            <div>
               {inputSwitch.inputSwitch.clicked ? (
                 <p>(Yearly)</p>
               ) : (
                 <p>(Monthly)</p>
               )}
-            </p>
+            </div>
           </div>
-          <a href="/src/components/pages/YourPlan.tsx">Change</a>
+          <a href="">Change</a>
         </div>
-        <div></div>
-        <div></div>
+        {`$${planPayment.userPlan.payment}${
+          inputSwitch.inputSwitch.clicked ? "/yr" : "/mo"
+        }`}
       </div>
-      <div></div>
     </div>
   );
 };
