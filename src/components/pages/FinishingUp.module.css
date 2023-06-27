@@ -4,9 +4,7 @@
   align-items: center;
   padding: 1.6rem;
   background-color: #d6d9e6;
-  border-top: 1px solid var(--pastel-blue);
-  border-left: 1px solid var(--pastel-blue);
-  border-right: 1px solid var(--pastel-blue);
+
   margin: 0 2.4rem;
 }
 
@@ -22,11 +20,11 @@
 }
 
 .yearly {
-  margin: 0;
+  margin: 0 0 0 0.3rem;
 }
 
 .monthly {
-  margin: 0;
+  margin: 0 0 0 0.3rem;
 }
 
 .change {
