@@ -2,9 +2,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1.6rem;
+  background-color: #d6d9e6;
+  border-top: 1px solid var(--pastel-blue);
+  border-left: 1px solid var(--pastel-blue);
+  border-right: 1px solid var(--pastel-blue);
+  margin: 0 2.4rem;
+}
+
+.user-plan {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .finalized__plan {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+}
+
+.yearly {
+  margin: 0;
+}
+
+.monthly {
+  margin: 0;
+}
+
+.change {
+  margin-top: 0.3rem;
 }

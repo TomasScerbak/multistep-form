@@ -14,22 +14,24 @@ const FinishigUp = () => {
         <h2>Double-check everything looks OK before confirming.</h2>
       </header>
       <div className={classes["finalized__plan-container"]}>
-        <div>
-          <div className={classes["finalized__plan"]}>
+        <div className={classes["finalized__plan"]}>
+          <div className={classes["user-plan"]}>
             <div>{userPlan.userPlan.type}</div>
-            <div>
-              {inputSwitch.inputSwitch.clicked ? (
-                <p>(Yearly)</p>
-              ) : (
-                <p>(Monthly)</p>
-              )}
-            </div>
+            {inputSwitch.inputSwitch.clicked ? (
+              <p className={classes.yearly}>(Yearly)</p>
+            ) : (
+              <p className={classes.monthly}>(Monthly)</p>
+            )}
           </div>
-          <a href="#">Change</a>
+          <a className={classes.change} href="#">
+            Change
+          </a>
         </div>
-        {`$${planPayment.userPlan.payment}${
-          inputSwitch.inputSwitch.clicked ? "/yr" : "/mo"
-        }`}
+        <div>
+          {`$${planPayment.userPlan.payment}${
+            inputSwitch.inputSwitch.clicked ? "/yr" : "/mo"
+          }`}
+        </div>
       </div>
     </section>
   );
