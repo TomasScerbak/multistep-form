@@ -44,13 +44,7 @@ function App() {
 
   const pageChange = () => {
     if (page === 0) {
-      return (
-        <PersonalInfo
-          formData={formData}
-          setFormData={setFormData}
-          description="Please provide your name, email address, and phone number."
-        />
-      );
+      return <PersonalInfo formData={formData} setFormData={setFormData} />;
     } else if (page === 1) {
       return <YourPlan />;
     } else if (page === 2) {

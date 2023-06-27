@@ -41,7 +41,7 @@ const YourPlan = () => {
 
   return (
     <section>
-      <h2>You have the option of monthly or yearly billing.</h2>
+      <h2>"You have the option of montly or yearly billing"</h2>
       {planVariations.map((plan, index) => (
         <PlanButton
           onChange={() =>

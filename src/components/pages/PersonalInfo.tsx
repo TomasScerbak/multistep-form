@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { RootState } from "../../store";
 
 type Props = {
-  description: string;
   formData: {};
   setFormData: Function;
 };
@@ -32,7 +31,7 @@ const PersonalInfo = (props: Props) => {
 
   return (
     <section>
-      <h2>{props.description}</h2>
+      <h2>"Please provide your name, email address, and phone number."</h2>
       <form>
         <div>
           <label htmlFor="name">Name</label>
