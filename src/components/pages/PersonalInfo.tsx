@@ -31,7 +31,7 @@ const PersonalInfo = (props: Props) => {
 
   return (
     <section>
-      <h2>"Please provide your name, email address, and phone number."</h2>
+      <h2>Please provide your name, email address, and phone number.</h2>
       <form>
         <div>
           <label htmlFor="name">Name</label>
