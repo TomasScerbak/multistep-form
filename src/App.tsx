@@ -32,6 +32,8 @@ function App() {
     },
   });
 
+  console.log(window.location.pathname);
+
   const formTitles: string[] = [
     "Personal Info",
     "Select Your Plan",

@@ -25,7 +25,7 @@ const FinishigUp = () => {
               )}
             </div>
           </div>
-          <a href="">Change</a>
+          <a href="#">Change</a>
         </div>
         {`$${planPayment.userPlan.payment}${
           inputSwitch.inputSwitch.clicked ? "/yr" : "/mo"

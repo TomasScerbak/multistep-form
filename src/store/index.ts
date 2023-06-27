@@ -32,14 +32,6 @@ const store = configureStore({
     }),
 });
 
-const persistor = persistStore(store);
-
-window.addEventListener("beforeunload", (event) => {
-  event.preventDefault();
-
-  persistor.purge().then((text) => console.log(text));
-});
-
 export default store;
 
 export type RootState = ReturnType<typeof store.getState>;

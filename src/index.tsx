@@ -12,6 +12,12 @@ import store from "../src/store";
 
 let persistor = persistStore(store);
 
+window.addEventListener("beforeunload", (event) => {
+  event.preventDefault();
+
+  persistor.purge().then((text) => console.log(text));
+});
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
