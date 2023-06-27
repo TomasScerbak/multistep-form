@@ -40,7 +40,7 @@ const YourPlan = () => {
   };
 
   return (
-    <div>
+    <section>
       <h2>You have the option of monthly or yearly billing.</h2>
       {planVariations.map((plan, index) => (
         <PlanButton
@@ -68,7 +68,7 @@ const YourPlan = () => {
       <div>
         <InputSwitch onClick={inputSwitchHandler} />
       </div>
-    </div>
+    </section>
   );
 };
 

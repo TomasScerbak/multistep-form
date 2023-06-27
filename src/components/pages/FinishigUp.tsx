@@ -9,7 +9,7 @@ const FinishigUp = () => {
   const planPayment = useSelector((state: RootState) => state.persistedReducer);
 
   return (
-    <div>
+    <section>
       <header>
         <h2>Double-check everything looks OK before confirming.</h2>
       </header>
@@ -31,7 +31,7 @@ const FinishigUp = () => {
           inputSwitch.inputSwitch.clicked ? "/yr" : "/mo"
         }`}
       </div>
-    </div>
+    </section>
   );
 };
 

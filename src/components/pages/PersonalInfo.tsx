@@ -31,7 +31,7 @@ const PersonalInfo = (props: Props) => {
   };
 
   return (
-    <div>
+    <section>
       <h2>{props.description}</h2>
       <form>
         <div>
@@ -62,7 +62,7 @@ const PersonalInfo = (props: Props) => {
           />
         </div>
       </form>
-    </div>
+    </section>
   );
 };
 

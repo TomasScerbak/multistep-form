@@ -23,7 +23,7 @@ const Addons = () => {
   ];
 
   return (
-    <div>
+    <section>
       <h2>Add-ons help enhance your gaming experience.</h2>
       {addons.map((addon) => (
         <Checkbox
@@ -34,7 +34,7 @@ const Addons = () => {
           payment={addon.payment}
         />
       ))}
-    </div>
+    </section>
   );
 };
 
