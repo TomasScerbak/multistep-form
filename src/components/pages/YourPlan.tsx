@@ -29,14 +29,15 @@ const planVariations = [
 
 const YourPlan = () => {
   const dispatch = useDispatch();
-  const userPlan = useSelector((state: RootState) => state.persistedReducer);
-  const inputSwitch = useSelector((state: RootState) => state.persistedReducer);
-
-  console.log(userPlan);
-  console.log(inputSwitch);
+  const userPlan = useSelector(
+    (state: RootState) => state.persistedReducer.userPlan
+  );
+  const inputSwitch = useSelector(
+    (state: RootState) => state.persistedReducer.inputSwitch
+  );
 
   const inputSwitchHandler = () => {
-    dispatch(saveStatus(!inputSwitch.inputSwitch.clicked));
+    dispatch(saveStatus(!inputSwitch.clicked));
   };
 
   return (
@@ -49,7 +50,7 @@ const YourPlan = () => {
               saveUserPlanSelection({
                 type: plan.variation,
                 payment:
-                  inputSwitch.inputSwitch.clicked === true
+                  inputSwitch.clicked === true
                     ? plan.payment * 10
                     : plan.payment,
               })
@@ -62,7 +63,7 @@ const YourPlan = () => {
           value={plan.variation}
           name="plan"
           payment={plan.payment}
-          checked={plan.variation === userPlan.userPlan.type}
+          checked={plan.variation === userPlan.type}
         />
       ))}
       <div>
