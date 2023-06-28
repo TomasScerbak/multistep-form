@@ -1,7 +1,6 @@
-import { useDispatch, useSelector } from "react-redux/es/exports";
+import { useDispatch } from "react-redux/es/exports";
 import { saveUserPersonalData } from "../../store/userPersonalDataSlice";
 import { useRef } from "react";
-import { RootState } from "../../store";
 
 type Props = {
   formData: {};
@@ -10,9 +9,6 @@ type Props = {
 
 const PersonalInfo = (props: Props) => {
   const dispatch = useDispatch();
-  const userInputs = useSelector((state: RootState) => state.persistedReducer);
-
-  console.log(userInputs);
 
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
