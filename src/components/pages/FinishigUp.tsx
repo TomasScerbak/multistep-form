@@ -11,7 +11,7 @@ const FinishigUp = () => {
     (state: RootState) => state.persistedReducer.inputSwitch
   );
   const planPayment = useSelector(
-    (state: RootState) => state.persistedReducer.userPlan
+    (state: RootState) => state.persistedReducer.userPlan.payment
   );
   const addons = useSelector(
     (state: RootState) => state.persistedReducer.addons
@@ -36,9 +36,7 @@ const FinishigUp = () => {
             Change
           </a>
         </div>
-        <div>
-          {`$${planPayment.payment}${inputSwitch.clicked ? "/yr" : "/mo"}`}
-        </div>
+        <div>{`$${planPayment}${inputSwitch.clicked ? "/yr" : "/mo"}`}</div>
         <div>
           {addons.addons.map((addon) => (
             <ul key={addon.id}>
