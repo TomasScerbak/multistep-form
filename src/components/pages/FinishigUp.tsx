@@ -4,9 +4,18 @@ import { RootState } from "../../store";
 import classes from "./FinishingUp.module.css";
 
 const FinishigUp = () => {
-  const userPlan = useSelector((state: RootState) => state.persistedReducer);
-  const inputSwitch = useSelector((state: RootState) => state.persistedReducer);
-  const planPayment = useSelector((state: RootState) => state.persistedReducer);
+  const userPlan = useSelector(
+    (state: RootState) => state.persistedReducer.userPlan
+  );
+  const inputSwitch = useSelector(
+    (state: RootState) => state.persistedReducer.inputSwitch
+  );
+  const planPayment = useSelector(
+    (state: RootState) => state.persistedReducer.userPlan
+  );
+  const addons = useSelector(
+    (state: RootState) => state.persistedReducer.addons
+  );
 
   return (
     <section>
@@ -16,11 +25,11 @@ const FinishigUp = () => {
       <div className={classes["finalized__plan-container"]}>
         <div className={classes["finalized__plan"]}>
           <div className={classes["user-plan"]}>
-            <div>{userPlan.userPlan.type}</div>
-            {inputSwitch.inputSwitch.clicked ? (
-              <p className={classes.yearly}>(Yearly)</p>
+            <span>{userPlan.type}</span>
+            {inputSwitch.clicked ? (
+              <span className={classes.yearly}>(Yearly)</span>
             ) : (
-              <p className={classes.monthly}>(Monthly)</p>
+              <span className={classes.monthly}>(Monthly)</span>
             )}
           </div>
           <a className={classes.change} href="#">
@@ -28,9 +37,15 @@ const FinishigUp = () => {
           </a>
         </div>
         <div>
-          {`$${planPayment.userPlan.payment}${
-            inputSwitch.inputSwitch.clicked ? "/yr" : "/mo"
-          }`}
+          {`$${planPayment.payment}${inputSwitch.clicked ? "/yr" : "/mo"}`}
+        </div>
+        <div>
+          {addons.addons.map((addon) => (
+            <ul key={addon.id}>
+              <li>{addon.header}</li>
+              <li>{addon.payment}</li>
+            </ul>
+          ))}
         </div>
       </div>
     </section>

@@ -17,7 +17,7 @@ const reducer = combineReducers({
   userInputs: userPersonalDataReducer.reducer,
   userPlan: userPlanSelectionReducer.reducer,
   inputSwitch: inputSwitchReducer.reducer,
-  addon: addonReducer.reducer,
+  addons: addonReducer.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

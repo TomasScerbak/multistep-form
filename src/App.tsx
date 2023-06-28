@@ -12,8 +12,6 @@ type FormData = {
   username: string;
   email: string;
   phoneNumber: string;
-  plan: {};
-  addon: {};
 };
 
 function App() {
@@ -22,17 +20,7 @@ function App() {
     username: "",
     email: "",
     phoneNumber: "",
-    plan: {
-      type: "",
-      payment: "",
-    },
-    addon: {
-      type: "",
-      payment: "",
-    },
   });
-
-  console.log(window.location.pathname);
 
   const formTitles: string[] = [
     "Personal Info",
