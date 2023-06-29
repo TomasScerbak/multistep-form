@@ -37,14 +37,16 @@ const FinishigUp = () => {
           </a>
         </div>
         <div>{`$${planPayment}${inputSwitch.clicked ? "/yr" : "/mo"}`}</div>
-        <div>
-          {addons.addons.map((addon) => (
-            <ul key={addon.id}>
-              <li>{addon.header}</li>
-              <li>{addon.payment}</li>
-            </ul>
-          ))}
-        </div>
+      </div>
+      <div className={classes["finalized__addon-container"]}>
+        {addons.addons.map((addon) => (
+          <div className={classes.addons} key={addon.id}>
+            <div>{addon.header}</div>
+            <div>{`$${addon.payment}${
+              inputSwitch.clicked ? "/yr" : "/mo"
+            }`}</div>
+          </div>
+        ))}
       </div>
     </section>
   );

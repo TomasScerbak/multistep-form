@@ -2,9 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.6rem;
   background-color: #d6d9e6;
-
   margin: 0 2.4rem;
 }
 
@@ -29,4 +27,19 @@
 
 .change {
   margin-top: 0.3rem;
+}
+
+.finalized__addon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #d6d9e6;
+  margin: 0 2.4rem;
+  border-top: 1px solid red;
+}
+
+.addons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
