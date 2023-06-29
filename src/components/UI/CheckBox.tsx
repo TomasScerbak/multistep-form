@@ -13,10 +13,7 @@ type Props = {
 
 const CheckBox = (props: Props) => {
   const dispatch = useDispatch();
-  const addon = useSelector((state: RootState) => state.persistedReducer);
   const inputSwitch = useSelector((state: RootState) => state.persistedReducer);
-
-  console.log(addon);
 
   const onInputCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
     const isChecked = event.target.checked;
