@@ -1,6 +1,7 @@
-import { useDispatch } from "react-redux/es/exports";
+import { useDispatch, useSelector } from "react-redux/es/exports";
 import { saveUserPersonalData } from "../../store/userPersonalDataSlice";
 import { useRef } from "react";
+import { RootState } from "../../store";
 
 type Props = {
   formData: {};
@@ -8,6 +9,15 @@ type Props = {
 };
 
 const PersonalInfo = (props: Props) => {
+  const userName = useSelector(
+    (state: RootState) => state.persistedReducer.userInputs.username
+  );
+  const email = useSelector(
+    (state: RootState) => state.persistedReducer.userInputs.email
+  );
+  const phoneNumber = useSelector(
+    (state: RootState) => state.persistedReducer.userInputs.phoneNumber
+  );
   const dispatch = useDispatch();
 
   const nameRef = useRef<HTMLInputElement>(null);
@@ -36,6 +46,7 @@ const PersonalInfo = (props: Props) => {
             type="text"
             name="name"
             ref={nameRef}
+            value={userName}
           />
         </div>
         <div>
@@ -45,6 +56,7 @@ const PersonalInfo = (props: Props) => {
             type="email"
             name="email"
             ref={emailRef}
+            value={email}
           />
         </div>
         <div>
@@ -54,6 +66,7 @@ const PersonalInfo = (props: Props) => {
             type="tel"
             name="phone"
             ref={phoneNumberRef}
+            value={phoneNumber}
           />
         </div>
       </form>
