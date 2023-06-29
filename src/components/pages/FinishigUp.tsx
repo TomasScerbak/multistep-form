@@ -17,6 +17,9 @@ const FinishigUp = () => {
     (state: RootState) => state.persistedReducer.addons
   );
 
+  let paymentValues = addons.addons.map((addons) => addons.payment);
+  let total = paymentValues.reduce((accu, curVal) => accu + curVal);
+
   return (
     <section>
       <header>
@@ -42,11 +45,18 @@ const FinishigUp = () => {
         {addons.addons.map((addon) => (
           <div className={classes.addons} key={addon.id}>
             <div>{addon.header}</div>
-            <div>{`$${addon.payment}${
+            <div>{`+$${addon.payment}${
               inputSwitch.clicked ? "/yr" : "/mo"
             }`}</div>
           </div>
         ))}
+      </div>
+      <div className={classes["finalized__total-container"]}>
+        <div>Total (per {inputSwitch.clicked ? "year" : "month"})</div>
+        <div>
+          +${userPlan.payment + total}
+          {inputSwitch.clicked ? "/yr" : "/mo"}
+        </div>
       </div>
     </section>
   );

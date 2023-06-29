@@ -43,3 +43,9 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.finalized__total-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+}
