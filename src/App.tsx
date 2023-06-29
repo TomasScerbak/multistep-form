@@ -27,7 +27,6 @@ function App() {
     "Select Your Plan",
     "Pick Add-ons",
     "Fisnishig Up",
-    "Thank you",
   ];
 
   const pageChange = () => {
