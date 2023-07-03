@@ -1,7 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 type addonCheckbox = {
-  addons: { id: number; header: string; payment: number }[];
+  addons: {
+    id: number;
+    header: string;
+    payment: number;
+    checked: boolean;
+  }[];
 };
 
 const initialState: addonCheckbox = {
@@ -23,6 +28,7 @@ export const addonsSlice = createSlice({
           id: newAddon.id,
           header: newAddon.header,
           payment: newAddon.payment,
+          checked: newAddon.checked,
         });
       }
     },

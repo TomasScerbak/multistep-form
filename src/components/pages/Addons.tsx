@@ -1,6 +1,18 @@
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
+
 import Checkbox from "../UI/Checkbox";
 
 const Addons = () => {
+  const addonsFromState = useSelector(
+    (state: RootState) => state.persistedReducer.addons.addons
+  );
+
+  console.log(
+    "array of addons checked by user in local storage",
+    addonsFromState
+  );
+
   const addons = [
     {
       id: 1,
