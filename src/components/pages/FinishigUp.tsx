@@ -1,8 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 
-import Addons from "./Addons";
-
 import classes from "./FinishingUp.module.css";
 
 const FinishigUp = () => {
@@ -20,6 +18,7 @@ const FinishigUp = () => {
   );
 
   let paymentValues = addonsFromState.map((addons) => addons.payment);
+
   let total = paymentValues.reduce((accu: any, curVal) => {
     if (!accu && !curVal) {
       return;
