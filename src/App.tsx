@@ -7,12 +7,6 @@ import FinishigUp from "./components/pages/FinishigUp";
 import ThankYou from "./components/pages/ThankYou";
 import RootLayout from "./components/pages/RootLayout";
 
-type FormData = {
-  username: string;
-  email: string;
-  phoneNumber: string;
-};
-
 const router = createBrowserRouter([
   {
     path: "/",
