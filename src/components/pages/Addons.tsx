@@ -4,13 +4,8 @@ import { RootState } from "../../store";
 import Checkbox from "../UI/Checkbox";
 
 const Addons = () => {
-  const addonsFromState = useSelector((state: RootState) =>
+  const addonsFromStateID = useSelector((state: RootState) =>
     state.persistedReducer.addons.addons.map((addon) => addon.id)
-  );
-
-  console.log(
-    "array of addons checked by user in local storage",
-    addonsFromState
   );
 
   const addons = [
@@ -44,7 +39,7 @@ const Addons = () => {
           header={addon.header}
           text={addon.text}
           payment={addon.payment}
-          checked={addonsFromState.find((id) => id === addon.id)}
+          checked={addonsFromStateID.find((id) => id === addon.id)}
         />
       ))}
     </section>
