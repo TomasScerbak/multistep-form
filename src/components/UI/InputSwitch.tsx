@@ -1,7 +1,8 @@
 import classes from "./InputSwitch.module.css";
 
 type Props = {
-  onClick: React.MouseEventHandler<HTMLDivElement>;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  checked: boolean;
 };
 
 const InputSwitch = (props: Props) => {
@@ -9,7 +10,11 @@ const InputSwitch = (props: Props) => {
     <div>
       <span>Monthly</span>
       <label className={classes.switch}>
-        <input onClick={props.onClick} type="checkbox" />
+        <input
+          checked={props.checked}
+          onChange={props.onChange}
+          type="checkbox"
+        />
         <span className={classes.slider}></span>
       </label>
       <span>Yearly</span>

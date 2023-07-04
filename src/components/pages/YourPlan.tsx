@@ -67,7 +67,10 @@ const YourPlan = () => {
         />
       ))}
       <div>
-        <InputSwitch onClick={inputSwitchHandler} />
+        <InputSwitch
+          checked={inputSwitch.clicked}
+          onChange={inputSwitchHandler}
+        />
       </div>
     </section>
   );

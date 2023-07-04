@@ -13,7 +13,9 @@ type Props = {
 
 const CheckBox = (props: Props) => {
   const dispatch = useDispatch();
-  const inputSwitch = useSelector((state: RootState) => state.persistedReducer);
+  const inputSwitch = useSelector(
+    (state: RootState) => state.persistedReducer.inputSwitch
+  );
 
   const onInputCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
     const isChecked = event.target.checked;
@@ -23,10 +25,7 @@ const CheckBox = (props: Props) => {
         saveAddon({
           id: props.id,
           header: props.header,
-          payment:
-            inputSwitch.inputSwitch.clicked === true
-              ? props.payment * 10
-              : props.payment,
+          payment: inputSwitch.clicked ? props.payment * 10 : props.payment,
           checked: event.target.value,
         })
       );
@@ -42,8 +41,7 @@ const CheckBox = (props: Props) => {
         <p>{props.text}</p>
       </div>
       <span>
-        + $
-        {inputSwitch.inputSwitch.clicked ? props.payment * 10 : props.payment}
+        + ${inputSwitch.clicked ? props.payment * 10 : props.payment}
         /mo
       </span>
     </div>
