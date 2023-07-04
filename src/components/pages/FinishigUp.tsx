@@ -13,12 +13,18 @@ const FinishigUp = () => {
   const planPayment = useSelector(
     (state: RootState) => state.persistedReducer.userPlan.payment
   );
-  const addons = useSelector(
-    (state: RootState) => state.persistedReducer.addons
+  const addonsFromState = useSelector((state: RootState) =>
+    state.persistedReducer.addons.addons.map((addon) => addon)
   );
 
-  let paymentValues = addons.addons.map((addons) => addons.payment);
-  let total = paymentValues.reduce((accu, curVal) => accu + curVal);
+  let paymentValues = addonsFromState.map((addons) => addons.payment);
+  let total = paymentValues.reduce((accu: any, curVal) => {
+    if (!accu && !curVal) {
+      return;
+    } else {
+      return accu + curVal;
+    }
+  }, []);
 
   return (
     <section>
@@ -41,8 +47,11 @@ const FinishigUp = () => {
         </div>
         <div>{`$${planPayment}${inputSwitch.clicked ? "/yr" : "/mo"}`}</div>
       </div>
+      {!userPlan && addonsFromState.length === 0 ? (
+        <p>please choose your plan</p>
+      ) : null}
       <div className={classes["finalized__addon-container"]}>
-        {addons.addons.map((addon) => (
+        {addonsFromState.map((addon) => (
           <div className={classes.addons} key={addon.id}>
             <div>{addon.header}</div>
             <div>{`+$${addon.payment}${

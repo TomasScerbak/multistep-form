@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../src/store";
 
 import Container from "./components/UI/Container";
 import PersonalInfo from "./components/pages/PersonalInfo";
@@ -15,6 +17,9 @@ type FormData = {
 };
 
 function App() {
+  const addonsFromState = useSelector((state: RootState) =>
+    state.persistedReducer.addons.addons.map((addon) => addon)
+  );
   const [page, setPage] = useState<number>(0);
   const [formData, setFormData] = useState<FormData>({
     username: "",
