@@ -8,8 +8,6 @@ const ThankYou = () => {
     (state: RootState) => state.persistedReducer.userPlan
   );
 
-  console.log(userPlan);
-
   const userName = useSelector(
     (state: RootState) => state.persistedReducer.userInputs.username
   );
