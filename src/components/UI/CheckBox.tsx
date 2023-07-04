@@ -27,7 +27,6 @@ const CheckBox = (props: Props) => {
           id: props.id,
           header: props.header,
           payment: inputSwitch.clicked ? props.payment * 10 : props.payment,
-          checked: isChecked,
         })
       );
     } else {
