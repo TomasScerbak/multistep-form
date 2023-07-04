@@ -1,14 +1,22 @@
+import { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { saveUserPersonalData } from "../../store/userPersonalDataSlice";
-import { useRef } from "react";
+
 import { RootState } from "../../store";
 
-type Props = {
-  formData: {};
-  setFormData: Function;
+type FormData = {
+  username: string;
+  email: string;
+  phoneNumber: string;
 };
 
-const PersonalInfo = (props: Props) => {
+const PersonalInfo = () => {
+  const [formData, setFormData] = useState<FormData>({
+    username: "",
+    email: "",
+    phoneNumber: "",
+  });
+
   const userName = useSelector(
     (state: RootState) => state.persistedReducer.userInputs.username
   );
@@ -27,7 +35,7 @@ const PersonalInfo = (props: Props) => {
   const onInputChangeHandler = () => {
     dispatch(
       saveUserPersonalData({
-        ...props.formData,
+        ...formData,
         username: nameRef.current?.value,
         email: emailRef.current?.value,
         phoneNumber: phoneNumberRef.current?.value,
