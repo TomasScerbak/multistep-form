@@ -20,7 +20,7 @@ const ThankYou = () => {
         <>
           <img src={ThankYouIcon} alt="thank you" />
           <header>
-            <h1>Thank you {userName}!</h1>
+            <p>Thank you {userName}!</p>
           </header>
           <p>
             Thanks for confirming your subscription! We hope you have fun using

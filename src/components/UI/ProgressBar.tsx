@@ -22,7 +22,7 @@ const ProgressBar = (props: Props) => {
   }, []);
 
   return (
-    <div className={classes["image-container"]}>
+    <div className={classes["image__container"]}>
       <img
         src={userWidth > 769 ? SideBarDesktopImage : SideBarMobileImage}
         alt="decoration"

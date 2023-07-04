@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Container from "../UI/Container";
 import ProgressBar from "../UI/ProgressBar";
+import Card from "../UI/Card";
 
 import PersonalInfo from "./PersonalInfo";
 import YourPlan from "./YourPlan";
@@ -38,10 +39,12 @@ const RootLayout = () => {
     <main>
       <Container>
         <ProgressBar page={page} />
-        <header>
-          <h1>{formTitles[page]}</h1>
-        </header>
-        <div>{pageChange()}</div>
+        <Card>
+          <header>
+            <h1>{formTitles[page]}</h1>
+          </header>
+          <div>{pageChange()}</div>
+        </Card>
       </Container>
       <footer>
         {page !== 0 ? (

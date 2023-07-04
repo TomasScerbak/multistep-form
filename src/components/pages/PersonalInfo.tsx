@@ -45,7 +45,7 @@ const PersonalInfo = () => {
 
   return (
     <section>
-      <h2>Please provide your name, email address, and phone number.</h2>
+      <p>Please provide your name, email address, and phone number.</p>
       <form>
         <div>
           <label htmlFor="name">Name</label>

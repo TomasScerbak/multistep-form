@@ -30,7 +30,7 @@ const FinishigUp = () => {
   return (
     <section>
       <header>
-        <h2>Double-check everything looks OK before confirming.</h2>
+        <p>Double-check everything looks OK before confirming.</p>
       </header>
       <div className={classes["finalized__plan-container"]}>
         <div className={classes["finalized__plan"]}>

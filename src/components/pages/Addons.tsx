@@ -31,7 +31,7 @@ const Addons = () => {
 
   return (
     <section>
-      <h2>Add-ons help enhance your gaming experience.</h2>
+      <p>Add-ons help enhance your gaming experience.</p>
       {addons.map((addon) => (
         <Checkbox
           id={addon.id}
