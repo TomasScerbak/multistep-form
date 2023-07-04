@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 
+import Addons from "./Addons";
+
 import classes from "./FinishingUp.module.css";
 
 const FinishigUp = () => {
@@ -24,7 +26,7 @@ const FinishigUp = () => {
     } else {
       return accu + curVal;
     }
-  }, []);
+  });
 
   return (
     <section>
@@ -41,7 +43,7 @@ const FinishigUp = () => {
               <span className={classes.monthly}>(Monthly)</span>
             )}
           </div>
-          <a className={classes.change} href="#">
+          <a className={classes.change} href="/">
             Change
           </a>
         </div>
