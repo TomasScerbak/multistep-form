@@ -26,7 +26,7 @@ const FinishigUp = () => {
     } else {
       return accu + curVal;
     }
-  });
+  }, 0);
 
   return (
     <section>

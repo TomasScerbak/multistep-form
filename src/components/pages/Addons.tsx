@@ -5,7 +5,7 @@ import Checkbox from "../UI/Checkbox";
 
 const Addons = () => {
   const addonsFromState = useSelector((state: RootState) =>
-    state.persistedReducer.addons.addons.map((addon) => addon)
+    state.persistedReducer.addons.addons.map((addon) => addon.id)
   );
 
   console.log(
@@ -47,6 +47,7 @@ const Addons = () => {
           header={addon.header}
           text={addon.text}
           payment={addon.payment}
+          checked={addonsFromState.find((id) => id === addon.id)}
         />
       ))}
     </section>

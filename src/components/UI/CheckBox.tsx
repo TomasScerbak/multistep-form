@@ -9,6 +9,7 @@ type Props = {
   header: string;
   text: string;
   payment: number;
+  checked: any;
 };
 
 const CheckBox = (props: Props) => {
@@ -26,7 +27,7 @@ const CheckBox = (props: Props) => {
           id: props.id,
           header: props.header,
           payment: inputSwitch.clicked ? props.payment * 10 : props.payment,
-          checked: event.target.value,
+          checked: isChecked,
         })
       );
     } else {
@@ -35,7 +36,11 @@ const CheckBox = (props: Props) => {
   };
   return (
     <div className={classes["checkbox-wrapper"]}>
-      <input onChange={onInputCheck} type="checkbox"></input>
+      <input
+        checked={props.checked}
+        onChange={onInputCheck}
+        type="checkbox"
+      ></input>
       <div>
         <h3>{props.header}</h3>
         <p>{props.text}</p>
