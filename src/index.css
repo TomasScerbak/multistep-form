@@ -44,17 +44,25 @@ img {
   width: 100%;
 }
 
-h1 {
+::placeholder {
   font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--grey);
+}
+
+h1 {
+  font-size: 2.4rem;
   color: var(--marine-blue);
   font-weight: 700;
   line-height: normal;
-  margin: 0;
+  margin: 0 0 0.9rem 0;
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.6rem;
   color: var(--grey);
   font-weight: 400;
   line-height: 1.5625rem;
+  inline-size: 25rem;
+  margin: 0 0 2.2rem 0;
 }

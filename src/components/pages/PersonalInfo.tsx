@@ -4,6 +4,8 @@ import { saveUserPersonalData } from "../../store/userPersonalDataSlice";
 
 import { RootState } from "../../store";
 
+import classes from "./PersonalInfo.module.css";
+
 type FormData = {
   username: string;
   email: string;
@@ -47,9 +49,13 @@ const PersonalInfo = () => {
     <section>
       <p>Please provide your name, email address, and phone number.</p>
       <form>
-        <div>
-          <label htmlFor="name">Name</label>
+        <div className={classes["form__control"]}>
+          <label className={classes["form__control-label"]} htmlFor="name">
+            Name
+          </label>
           <input
+            placeholder="e.g Stephen King"
+            className={classes["form__control-input"]}
             onChange={onInputChangeHandler}
             type="text"
             name="name"
@@ -57,9 +63,13 @@ const PersonalInfo = () => {
             value={userName}
           />
         </div>
-        <div>
-          <label htmlFor="email">Email Address</label>
+        <div className={classes["form__control"]}>
+          <label className={classes["form__control-label"]} htmlFor="email">
+            Email Address
+          </label>
           <input
+            placeholder="e.g stephenking@lorem.com"
+            className={classes["form__control-input"]}
             onChange={onInputChangeHandler}
             type="email"
             name="email"
@@ -67,9 +77,13 @@ const PersonalInfo = () => {
             value={email}
           />
         </div>
-        <div>
-          <label htmlFor="phone">Phone Number</label>
+        <div className={classes["form__control"]}>
+          <label className={classes["form__control-label"]} htmlFor="phone">
+            Phone Number
+          </label>
           <input
+            placeholder="e.g +1 234 567 890"
+            className={classes["form__control-input"]}
             onChange={onInputChangeHandler}
             type="tel"
             name="phone"
