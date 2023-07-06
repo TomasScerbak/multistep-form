@@ -14,7 +14,11 @@ type Props = {
 };
 
 const PlanButton = (props: Props) => {
-  const inputSwitch = useSelector((state: RootState) => state.persistedReducer);
+  const inputSwitch = useSelector(
+    (state: RootState) => state.persistedReducer.inputSwitch
+  );
+
+  let yearOrMonth = inputSwitch.clicked ? "yr" : "mo";
 
   return (
     <label
@@ -34,11 +38,11 @@ const PlanButton = (props: Props) => {
       <div>
         <div className={classes.variation}>{props.value}</div>
         <div className={classes.payment}>{`$${
-          inputSwitch.inputSwitch.clicked === true
-            ? props.payment * 10
-            : props.payment
-        }/mo`}</div>
-        {inputSwitch.inputSwitch.clicked ? <p>2 months free</p> : null}
+          inputSwitch.clicked === true ? props.payment * 10 : props.payment
+        }${yearOrMonth}`}</div>
+        {inputSwitch.clicked ? (
+          <p className={classes.free}>2 months free</p>
+        ) : null}
       </div>
     </label>
   );

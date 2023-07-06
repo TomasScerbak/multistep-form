@@ -1,6 +1,6 @@
 .plan {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   cursor: pointer;
   border: 1px solid var(--light-grey);
   border-radius: 0.8rem;
@@ -31,6 +31,14 @@ input[type="radio"] {
   font-size: 1.4rem;
   font-weight: 400;
   color: #9699aa;
+}
+
+.free {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--marine-blue);
+  line-height: 0.2rem;
+  margin-top: 0.5rem;
 }
 
 .plan-active {
