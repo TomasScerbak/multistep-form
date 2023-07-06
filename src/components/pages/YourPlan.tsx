@@ -12,12 +12,12 @@ import PlanButton from "../UI/PlanButton";
 const planVariations = [
   {
     image: IconAdvanced,
-    variation: "Advanced",
+    variation: "Arcade",
     payment: 9,
   },
   {
     image: IconArcade,
-    variation: "Arcade",
+    variation: "Advanced",
     payment: 12,
   },
   {
