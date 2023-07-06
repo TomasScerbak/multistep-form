@@ -7,8 +7,8 @@ type Props = {
 
 const InputSwitch = (props: Props) => {
   return (
-    <div>
-      <span>Monthly</span>
+    <div className={classes["input__switch-container"]}>
+      <span className={classes.month}>Monthly</span>
       <label className={classes.switch}>
         <input
           checked={props.checked}
@@ -17,7 +17,7 @@ const InputSwitch = (props: Props) => {
         />
         <span className={classes.slider}></span>
       </label>
-      <span>Yearly</span>
+      <span className={classes.year}>Yearly</span>
     </div>
   );
 };

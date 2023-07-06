@@ -19,7 +19,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--marine-blue);
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 34px;
@@ -39,7 +39,7 @@
 }
 
 input:checked + .slider {
-  background-color: var(--soft-cyan);
+  background-color: var(--marine-blue);
 }
 
 input:focus + .slider {
@@ -50,4 +50,27 @@ input:checked + .slider:before {
   -webkit-transform: translateX(2rem);
   -ms-transform: translateX(2rem);
   transform: translateX(2rem);
+}
+
+.input__switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 0.8rem;
+  height: 4.8rem;
+  background-color: var(--alabaster);
+  margin: 2.4rem auto;
+}
+
+.month {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--marine-blue);
+}
+
+.year {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--grey);
 }
