@@ -27,6 +27,9 @@ const FinishigUp = () => {
     }
   }, 0);
 
+  let yearOrMonthShort = inputSwitch.clicked ? "/yr" : "/mo";
+  let yearOrMonthFullText = inputSwitch.clicked ? "year" : "month";
+
   return (
     <section>
       <header>
@@ -46,7 +49,7 @@ const FinishigUp = () => {
             Change
           </a>
         </div>
-        <div>{`$${planPayment}${inputSwitch.clicked ? "/yr" : "/mo"}`}</div>
+        <div>{`$${planPayment}${yearOrMonthShort}`}</div>
       </div>
       {!userPlan && addonsFromState.length === 0 ? (
         <p>please choose your plan</p>
@@ -55,17 +58,15 @@ const FinishigUp = () => {
         {addonsFromState.map((addon) => (
           <div className={classes.addons} key={addon.id}>
             <div>{addon.header}</div>
-            <div>{`+$${addon.payment}${
-              inputSwitch.clicked ? "/yr" : "/mo"
-            }`}</div>
+            <div>{`+$${addon.payment}${yearOrMonthShort}`}</div>
           </div>
         ))}
       </div>
       <div className={classes["finalized__total-container"]}>
-        <div>Total (per {inputSwitch.clicked ? "year" : "month"})</div>
+        <div>Total (per {yearOrMonthFullText})</div>
         <div>
           +${userPlan.payment + total}
-          {inputSwitch.clicked ? "/yr" : "/mo"}
+          {yearOrMonthShort}
         </div>
       </div>
     </section>
