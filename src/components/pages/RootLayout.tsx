@@ -3,12 +3,16 @@ import { useState } from "react";
 import Container from "../UI/Container";
 import ProgressBar from "../UI/ProgressBar";
 import Card from "../UI/Card";
+import ButtonPrimary from "../UI/ButtonPrimary";
+import ButtonSecondary from "../UI/ButtonSecondary";
 
 import PersonalInfo from "./PersonalInfo";
 import YourPlan from "./YourPlan";
 import Addons from "./Addons";
 import FinishigUp from "./FinishigUp";
 import ThankYou from "./ThankYou";
+
+import classes from "./RootLayout.module.css";
 
 const RootLayout = () => {
   const [page, setPage] = useState<number>(0);
@@ -47,20 +51,23 @@ const RootLayout = () => {
         </Card>
       </Container>
       <footer>
-        {page !== 0 ? (
-          <button
-            disabled={page === 0}
-            onClick={() => setPage((currPage) => currPage - 1)}
+        <section className={classes["footer__section"]}>
+          {page !== 0 ? (
+            <ButtonSecondary
+              text="Go Back"
+              disabled={page === 0}
+              onClick={() => setPage((currPage) => currPage - 1)}
+            ></ButtonSecondary>
+          ) : (
+            <div></div>
+          )}
+          <ButtonPrimary
+            disabled={page === formTitles.length - 1}
+            onClick={() => setPage((currPage) => currPage + 1)}
           >
-            Go Back
-          </button>
-        ) : null}
-        <button
-          disabled={page === formTitles.length - 1}
-          onClick={() => setPage((currPage) => currPage + 1)}
-        >
-          {page === 3 ? "Confirm" : "Next Step"}
-        </button>
+            {page === 3 ? "Confirm" : "Next Step"}
+          </ButtonPrimary>
+        </section>
       </footer>
     </main>
   );
