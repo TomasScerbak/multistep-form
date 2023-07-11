@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
   background-color: #d6d9e6;
-  margin: 0 2.4rem;
 }
 
 .user-plan {
@@ -34,7 +33,6 @@
   flex-direction: column;
   justify-content: center;
   background-color: #d6d9e6;
-  margin: 0 2.4rem;
   border-top: 1px solid red;
 }
 
@@ -47,5 +45,4 @@
 .finalized__total-container {
   display: flex;
   justify-content: space-between;
-  margin: 2rem;
 }
