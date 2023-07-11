@@ -34,20 +34,21 @@ const CheckBox = (props: Props) => {
     }
   };
   return (
-    <div className={classes["checkbox-wrapper"]}>
+    <div className={`${classes["checkbox__wrapper"]}`}>
       <input
+        className={classes.checkbox}
         checked={props.checked}
         onChange={onInputCheck}
         type="checkbox"
       ></input>
-      <div>
-        <h3>{props.header}</h3>
-        <p>{props.text}</p>
+      <div className={classes["checkbox__text-container"]}>
+        <h3 className={classes["checkbox__header"]}>{props.header}</h3>
+        <p className={classes["checkbox__text"]}>{props.text}</p>
       </div>
-      <span>
+      <div className={classes["checkbox__price"]}>
         + ${inputSwitch.clicked ? props.payment * 10 : props.payment}
         /mo
-      </span>
+      </div>
     </div>
   );
 };
