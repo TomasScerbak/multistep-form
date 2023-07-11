@@ -12,7 +12,9 @@ const ButtonPrimary = (props: ButtonProps) => {
       disabled={props.disabled}
       onClick={props.onClick}
       className={`${classes.btn}
-      ${classes["btn--primary"]}`}
+      ${classes["btn--primary"]} ${
+        props.children?.valueOf() === "Confirm" ? `${classes["active"]}` : ""
+      }`}
     >
       {props.children}
     </button>

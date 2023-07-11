@@ -17,3 +17,7 @@
 .btn--primary:hover {
   background-color: #164a8a;
 }
+
+.active {
+  background-color: var(--purplish-blue);
+}
