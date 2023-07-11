@@ -8,6 +8,11 @@
   border-radius: 0.8rem;
 }
 
+.checkbox__wrapper-active {
+  background-color: var(--alabaster);
+  border: 1px solid var(--purplish-blue);
+}
+
 .checkbox {
   margin-right: 1.6rem;
   cursor: pointer;
@@ -15,11 +20,6 @@
 
 .checkbox__text-container {
   width: 20rem;
-}
-
-.checkbox__active {
-  background-color: var(--alabaster);
-  border: 1px solid var(--purplish-blue);
 }
 
 .checkbox__header {

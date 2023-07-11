@@ -18,6 +18,8 @@ const CheckBox = (props: Props) => {
     (state: RootState) => state.persistedReducer.inputSwitch
   );
 
+  let yearOrMonth = inputSwitch.clicked ? "yr" : "mo";
+
   const onInputCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
     const isChecked = event.target.checked;
 
@@ -34,7 +36,11 @@ const CheckBox = (props: Props) => {
     }
   };
   return (
-    <div className={`${classes["checkbox__wrapper"]}`}>
+    <div
+      className={`${classes["checkbox__wrapper"]} ${
+        props.checked ? `${classes["checkbox__wrapper-active"]}` : ""
+      }`}
+    >
       <input
         className={classes.checkbox}
         checked={props.checked}
@@ -47,7 +53,7 @@ const CheckBox = (props: Props) => {
       </div>
       <div className={classes["checkbox__price"]}>
         + ${inputSwitch.clicked ? props.payment * 10 : props.payment}
-        /mo
+        {yearOrMonth}
       </div>
     </div>
   );
