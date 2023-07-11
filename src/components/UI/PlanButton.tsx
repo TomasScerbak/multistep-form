@@ -39,7 +39,7 @@ const PlanButton = (props: Props) => {
         <div className={classes.variation}>{props.value}</div>
         <div className={classes.payment}>{`$${
           inputSwitch.clicked === true ? props.payment * 10 : props.payment
-        }${yearOrMonth}`}</div>
+        }/${yearOrMonth}`}</div>
         {inputSwitch.clicked ? (
           <p className={classes.free}>2 months free</p>
         ) : null}
