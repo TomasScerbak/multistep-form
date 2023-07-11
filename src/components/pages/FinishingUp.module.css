@@ -2,18 +2,34 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #d6d9e6;
+  background-color: var(--alabaster);
+  padding: 1.6rem 1.6rem 1.2rem;
 }
 
 .user-plan {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.change {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--grey);
+  margin-top: 0.3rem;
 }
 
 .finalized__plan {
   display: flex;
   flex-direction: column;
+}
+
+.finalized__plan-payment {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--marine-blue);
 }
 
 .yearly {
@@ -24,16 +40,13 @@
   margin: 0 0 0 0.3rem;
 }
 
-.change {
-  margin-top: 0.3rem;
-}
-
 .finalized__addon-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #d6d9e6;
-  border-top: 1px solid red;
+  background-color: var(--alabaster);
+  border-top: 1px solid var(--grey);
+  padding: 1.2rem 1.6rem 1.6rem;
 }
 
 .addons {
@@ -42,7 +55,33 @@
   justify-content: space-between;
 }
 
+.finalized__addon-header {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--grey);
+}
+
+.finalized__addon-payement {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--marine-blue);
+}
+
 .finalized__total-container {
   display: flex;
   justify-content: space-between;
+  margin-top: 2.4rem;
+  padding: 0 1.6rem 1.6rem;
+}
+
+.finalized__total {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--grey);
+}
+
+.finalized__total-payment {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--purplish-blue);
 }

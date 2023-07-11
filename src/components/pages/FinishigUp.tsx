@@ -49,7 +49,9 @@ const FinishigUp = () => {
             Change
           </a>
         </div>
-        <div>{`$${planPayment}${yearOrMonthShort}`}</div>
+        <div
+          className={classes["finalized__plan-payment"]}
+        >{`$${planPayment}${yearOrMonthShort}`}</div>
       </div>
       {!userPlan && addonsFromState.length === 0 ? (
         <p>please choose your plan</p>
@@ -57,14 +59,20 @@ const FinishigUp = () => {
       <div className={classes["finalized__addon-container"]}>
         {addonsFromState.map((addon) => (
           <div className={classes.addons} key={addon.id}>
-            <div>{addon.header}</div>
-            <div>{`+$${addon.payment}${yearOrMonthShort}`}</div>
+            <div className={classes["finalized__addon-header"]}>
+              {addon.header}
+            </div>
+            <div
+              className={classes["finalized__addon-payement"]}
+            >{`+$${addon.payment}${yearOrMonthShort}`}</div>
           </div>
         ))}
       </div>
       <div className={classes["finalized__total-container"]}>
-        <div>Total (per {yearOrMonthFullText})</div>
-        <div>
+        <div className={classes["finalized__total"]}>
+          Total (per {yearOrMonthFullText})
+        </div>
+        <div className={classes["finalized__total-payment"]}>
           +${userPlan.payment + total}
           {yearOrMonthShort}
         </div>
