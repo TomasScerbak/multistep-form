@@ -9,3 +9,10 @@
   padding: 3.2rem 2.4rem;
   margin-top: 15rem;
 }
+
+@media screen and (min-width: 760px) {
+  .card {
+    width: 94rem;
+    height: 60rem;
+  }
+}

@@ -6,6 +6,7 @@
   bottom: 0;
   margin: auto;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -31,4 +32,34 @@
   background-color: var(--light-blue);
   border: 1px solid var(--light-blue);
   transition: all 1s;
+}
+
+@media screen and (min-width: 760px) {
+  .circle-container {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 4.5rem auto auto 4.3rem;
+  }
+
+  .circle__wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3.1rem;
+  }
+
+  .step__number {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--light-blue);
+    margin-bottom: 0.4rem;
+  }
+
+  .step__text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
 }

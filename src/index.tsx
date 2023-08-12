@@ -15,7 +15,7 @@ let persistor = persistStore(store);
 window.addEventListener("beforeunload", (event) => {
   event.preventDefault();
 
-  persistor.purge().then((text) => console.log(text));
+  persistor.purge().then((text) => text);
 });
 
 const root = ReactDOM.createRoot(
