@@ -18,6 +18,7 @@ html {
   --pastel-blue: hsl(228, 100%, 84%);
   --light-blue: hsl(206, 94%, 87%);
   --strawberry-red: hsl(354, 84%, 57%);
+  --red: hsla(354, 84%, 57%, 1);
 
   /* Neutral */
   --grey: hsl(231, 11%, 63%);

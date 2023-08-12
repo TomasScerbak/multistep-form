@@ -34,6 +34,8 @@ const PersonalInfo = () => {
   const emailRef = useRef<HTMLInputElement>(null);
   const phoneNumberRef = useRef<HTMLInputElement>(null);
 
+  const error: String = "This field is required";
+
   const onInputChangeHandler = () => {
     dispatch(
       saveUserPersonalData({
@@ -62,6 +64,7 @@ const PersonalInfo = () => {
             ref={nameRef}
             value={userName}
           />
+          <div className={classes.error}>{userName ? null : error}</div>
         </div>
         <div className={classes["form__control"]}>
           <label className={classes["form__control-label"]} htmlFor="email">
@@ -76,6 +79,7 @@ const PersonalInfo = () => {
             ref={emailRef}
             value={email}
           />
+          <div className={classes.error}>{email ? null : error}</div>
         </div>
         <div className={classes["form__control"]}>
           <label className={classes["form__control-label"]} htmlFor="phone">
@@ -90,6 +94,7 @@ const PersonalInfo = () => {
             ref={phoneNumberRef}
             value={phoneNumber}
           />
+          <div className={classes.error}>{phoneNumber ? null : error}</div>
         </div>
       </form>
     </section>
