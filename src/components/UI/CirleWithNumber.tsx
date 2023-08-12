@@ -22,7 +22,7 @@ const CirleWithNumber = (props: Props) => {
   return (
     <div className={classes["circle-container"]}>
       {numberInCricle.map((version, index) => (
-        <div className={classes["circle__wrapper"]}>
+        <div key={index} className={classes["circle__wrapper"]}>
           <div
             key={index}
             className={`${classes.circle} ${

@@ -1,16 +1,17 @@
 .image__container {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -13rem;
+  left: -5%;
   z-index: -1;
-  width: 100%;
+  width: 37.8rem;
 }
 
 @media screen and (min-width: 760px) {
   .image__container {
-    top: 10%;
-    left: 20%;
+    top: 2.5%;
+    left: 1.7%;
     width: 27.4rem;
     height: 56.8rem;
+    z-index: 1;
   }
 }
