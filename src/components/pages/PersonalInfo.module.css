@@ -29,12 +29,13 @@
   font-size: 1.2rem;
   font-weight: 700;
 }
+
 .form__control-input:focus {
   border: 1px solid var(--purplish-blue);
 }
 
 .input__outline-error {
-  outline: var(--red);
+  border: 1px solid var(--red);
 }
 
 @media screen and (min-width: 760px) {
