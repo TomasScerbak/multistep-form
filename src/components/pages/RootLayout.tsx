@@ -57,27 +57,48 @@ const RootLayout = () => {
             <h1 className={classes["card__header"]}>{formTitles[page]}</h1>
           </header>
           <div className={classes.page}>{pageChange()}</div>
+          {userWidth > 760 ? (
+            <section className={classes["footer__section"]}>
+              {page !== 0 ? (
+                <ButtonSecondary
+                  text="Go Back"
+                  disabled={page === 0}
+                  onClick={() => setPage((currPage) => currPage - 1)}
+                ></ButtonSecondary>
+              ) : (
+                <div></div>
+              )}
+              <ButtonPrimary
+                disabled={page === formTitles.length - 1}
+                onClick={() => setPage((currPage) => currPage + 1)}
+              >
+                {page === 3 ? "Confirm" : "Next Step"}
+              </ButtonPrimary>
+            </section>
+          ) : null}
         </Card>
       </Container>
-      <footer>
-        <section className={classes["footer__section"]}>
-          {page !== 0 ? (
-            <ButtonSecondary
-              text="Go Back"
-              disabled={page === 0}
-              onClick={() => setPage((currPage) => currPage - 1)}
-            ></ButtonSecondary>
-          ) : (
-            <div></div>
-          )}
-          <ButtonPrimary
-            disabled={page === formTitles.length - 1}
-            onClick={() => setPage((currPage) => currPage + 1)}
-          >
-            {page === 3 ? "Confirm" : "Next Step"}
-          </ButtonPrimary>
-        </section>
-      </footer>
+      {userWidth < 760 ? (
+        <footer>
+          <section className={classes["footer__section"]}>
+            {page !== 0 ? (
+              <ButtonSecondary
+                text="Go Back"
+                disabled={page === 0}
+                onClick={() => setPage((currPage) => currPage - 1)}
+              ></ButtonSecondary>
+            ) : (
+              <div></div>
+            )}
+            <ButtonPrimary
+              disabled={page === formTitles.length - 1}
+              onClick={() => setPage((currPage) => currPage + 1)}
+            >
+              {page === 3 ? "Confirm" : "Next Step"}
+            </ButtonPrimary>
+          </section>
+        </footer>
+      ) : null}
     </main>
   );
 };
