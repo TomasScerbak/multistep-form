@@ -31,3 +31,7 @@
 .form__control-input:focus {
   border: 1px solid var(--purplish-blue);
 }
+
+.input__outline-error {
+  outline: var(--red);
+}

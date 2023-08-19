@@ -7,3 +7,18 @@
   align-items: center;
   padding: 2.5rem 1.6rem;
 }
+
+@media screen and (min-width: 769px) {
+  .page {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-right: 10rem;
+  }
+
+  .card-header__wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 4rem 0 1.1rem 4rem;
+  }
+}
