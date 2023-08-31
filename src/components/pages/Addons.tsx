@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 
-import Checkbox from "../UI/Checkbox";
+import Checkbox from "../UI/CheckBox";
 
 const Addons = () => {
   const addonsFromStateID = useSelector((state: RootState) =>

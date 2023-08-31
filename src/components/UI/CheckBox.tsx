@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { saveAddon, removeAddon } from "../../store/addonsSlice";
 import { RootState } from "../../store";
 
-import classes from "./Checkbox.module.css";
+import classes from "../UI/CheckBox.module.css";
 
 type Props = {
   id: number;
