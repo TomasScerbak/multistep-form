@@ -71,3 +71,14 @@ input[type="checkbox"] {
   width: 2rem;
   height: 2rem;
 }
+
+@media screen and (min-width: 769px) {
+  h1 {
+    font-size: 3.2rem;
+    margin: 0 0 1.1rem 5rem;
+  }
+
+  p {
+    margin: 0 0 3.2rem 0;
+  }
+}

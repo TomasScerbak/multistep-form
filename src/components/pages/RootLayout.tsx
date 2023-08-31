@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Container from "../UI/Container";
 import ProgressBar from "../UI/ProgressBar";
@@ -16,6 +16,15 @@ import classes from "./RootLayout.module.css";
 
 const RootLayout = () => {
   const [page, setPage] = useState<number>(0);
+  const [userWidth, setUserWidth] = useState<number>(window.innerWidth);
+
+  const updateMedia = () => {
+    setUserWidth(userWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", () => updateMedia);
+  }, []);
 
   const formTitles: string[] = [
     "Personal Info",
@@ -44,31 +53,52 @@ const RootLayout = () => {
       <Container>
         <Card>
           <ProgressBar page={page} />
-          <header>
-            <h1>{formTitles[page]}</h1>
+          <header className={classes["card-header__wrapper"]}>
+            <h1 className={classes["card__header"]}>{formTitles[page]}</h1>
           </header>
-          <div>{pageChange()}</div>
+          <div className={classes.page}>{pageChange()}</div>
+          {userWidth > 760 ? (
+            <section className={classes["footer__section"]}>
+              {page !== 0 ? (
+                <ButtonSecondary
+                  text="Go Back"
+                  disabled={page === 0}
+                  onClick={() => setPage((currPage) => currPage - 1)}
+                ></ButtonSecondary>
+              ) : (
+                <div></div>
+              )}
+              <ButtonPrimary
+                disabled={page === formTitles.length - 1}
+                onClick={() => setPage((currPage) => currPage + 1)}
+              >
+                {page === 3 ? "Confirm" : "Next Step"}
+              </ButtonPrimary>
+            </section>
+          ) : null}
         </Card>
       </Container>
-      <footer>
-        <section className={classes["footer__section"]}>
-          {page !== 0 ? (
-            <ButtonSecondary
-              text="Go Back"
-              disabled={page === 0}
-              onClick={() => setPage((currPage) => currPage - 1)}
-            ></ButtonSecondary>
-          ) : (
-            <div></div>
-          )}
-          <ButtonPrimary
-            disabled={page === formTitles.length - 1}
-            onClick={() => setPage((currPage) => currPage + 1)}
-          >
-            {page === 3 ? "Confirm" : "Next Step"}
-          </ButtonPrimary>
-        </section>
-      </footer>
+      {userWidth < 760 ? (
+        <footer>
+          <section className={classes["footer__section"]}>
+            {page !== 0 ? (
+              <ButtonSecondary
+                text="Go Back"
+                disabled={page === 0}
+                onClick={() => setPage((currPage) => currPage - 1)}
+              ></ButtonSecondary>
+            ) : (
+              <div></div>
+            )}
+            <ButtonPrimary
+              disabled={page === formTitles.length - 1}
+              onClick={() => setPage((currPage) => currPage + 1)}
+            >
+              {page === 3 ? "Confirm" : "Next Step"}
+            </ButtonPrimary>
+          </section>
+        </footer>
+      ) : null}
     </main>
   );
 };
