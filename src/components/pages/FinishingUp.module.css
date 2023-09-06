@@ -14,6 +14,12 @@
   font-weight: 700;
 }
 
+.user-plan__type,
+.yearly,
+.monthly {
+  color: var(--marine-blue);
+}
+
 .change {
   font-size: 1.4rem;
   font-weight: 400;
@@ -53,6 +59,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1.6rem;
 }
 
 .finalized__addon-header {
@@ -91,5 +98,18 @@
     min-width: 45rem;
     min-height: 22.8rem;
     margin-left: 31rem;
+  }
+
+  .finalized__plan-payment {
+    font-size: 1.6rem;
+  }
+
+  .finalized__total-payment {
+    font-size: 2rem;
+  }
+
+  .finalized__plan-container,
+  .finalized__addon-container {
+    padding: 1.6rem 2.4rem 2.4rem 2.4rem;
   }
 }

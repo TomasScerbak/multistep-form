@@ -38,7 +38,7 @@ const FinishigUp = () => {
       <div className={classes["finalized__plan-container"]}>
         <div className={classes["finalized__plan"]}>
           <div className={classes["user-plan"]}>
-            <span>{userPlan.type}</span>
+            <span className={classes["user-plan__type"]}>{userPlan.type}</span>
             {inputSwitch.clicked ? (
               <span className={classes.yearly}>(Yearly)</span>
             ) : (
