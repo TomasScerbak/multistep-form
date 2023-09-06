@@ -15,7 +15,7 @@ const ThankYou = () => {
   );
 
   return (
-    <section>
+    <section className={classes["thankyou-section"]}>
       <div className={classes["thanks-wrapper"]}>
         {userPlan.type === "" ? (
           <p>Please choose your plan</p>

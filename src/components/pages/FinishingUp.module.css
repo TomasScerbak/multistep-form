@@ -85,3 +85,11 @@
   font-weight: 700;
   color: var(--purplish-blue);
 }
+
+@media screen and (min-width: 760px) {
+  .finish-section {
+    min-width: 45rem;
+    min-height: 22.8rem;
+    margin-left: 37rem;
+  }
+}

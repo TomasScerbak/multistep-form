@@ -31,7 +31,7 @@ const FinishigUp = () => {
   let yearOrMonthFullText = inputSwitch.clicked ? "year" : "month";
 
   return (
-    <section>
+    <section className={classes["finish-section"]}>
       <header>
         <p>Double-check everything looks OK before confirming.</p>
       </header>
