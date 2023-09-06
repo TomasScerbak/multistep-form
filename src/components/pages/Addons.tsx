@@ -3,6 +3,8 @@ import { RootState } from "../../store";
 
 import Checkbox from "../UI/CheckBox";
 
+import classes from "./Addons.module.css";
+
 const Addons = () => {
   const addonsFromStateID = useSelector((state: RootState) =>
     state.persistedReducer.addons.addons.map((addon) => addon.id)
@@ -30,7 +32,7 @@ const Addons = () => {
   ];
 
   return (
-    <section>
+    <section className={classes["addon-section"]}>
       <p>Add-ons help enhance your gaming experience.</p>
       {addons.map((addon) => (
         <Checkbox

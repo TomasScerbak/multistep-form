@@ -42,3 +42,19 @@
   font-weight: 400;
   color: var(--purplish-blue);
 }
+
+@media screen and (min-width: 760px) {
+  .checkbox__wrapper {
+    width: 45rem;
+    height: 8.1rem;
+    justify-content: flex-start;
+  }
+
+  .checkbox {
+    margin-right: 2.4rem;
+  }
+
+  .checkbox__text-container {
+    margin-right: 12.7rem;
+  }
+}
