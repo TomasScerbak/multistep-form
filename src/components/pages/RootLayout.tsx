@@ -59,7 +59,7 @@ const RootLayout = () => {
           <div className={classes.page}>{pageChange()}</div>
           {userWidth > 760 ? (
             <section className={classes["footer__section"]}>
-              {page !== 0 ? (
+              {page !== 0 && page < 4 ? (
                 <ButtonSecondary
                   text="Go Back"
                   disabled={page === 0}
@@ -68,12 +68,14 @@ const RootLayout = () => {
               ) : (
                 <div></div>
               )}
-              <ButtonPrimary
-                disabled={page === formTitles.length - 1}
-                onClick={() => setPage((currPage) => currPage + 1)}
-              >
-                {page === 3 ? "Confirm" : "Next Step"}
-              </ButtonPrimary>
+              {page < 4 ? (
+                <ButtonPrimary
+                  disabled={page === formTitles.length - 1}
+                  onClick={() => setPage((currPage) => currPage + 1)}
+                >
+                  {page === 3 ? "Confirm" : "Next Step"}
+                </ButtonPrimary>
+              ) : null}
             </section>
           ) : null}
         </Card>
