@@ -43,6 +43,10 @@
     margin-bottom: 0.8rem;
   }
 
+  .form__control-input {
+    width: 45rem;
+  }
+
   .error {
     font-size: 1.4rem;
   }
