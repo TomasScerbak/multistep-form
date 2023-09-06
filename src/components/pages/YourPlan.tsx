@@ -9,6 +9,8 @@ import IconPro from "../../assets/icon-pro.svg";
 import InputSwitch from "../UI/InputSwitch";
 import PlanButton from "../UI/PlanButton";
 
+import classes from "./YourPlan.module.css";
+
 const planVariations = [
   {
     image: IconAdvanced,
@@ -41,31 +43,33 @@ const YourPlan = () => {
   };
 
   return (
-    <section>
+    <section className={classes["plan-button__section"]}>
       <p>You have the option of montly or yearly billing</p>
-      {planVariations.map((plan, index) => (
-        <PlanButton
-          onChange={() =>
-            dispatch(
-              saveUserPlanSelection({
-                type: plan.variation,
-                payment:
-                  inputSwitch.clicked === true
-                    ? plan.payment * 10
-                    : plan.payment,
-              })
-            )
-          }
-          id="radio-button"
-          type="radio"
-          key={index}
-          image={plan.image}
-          value={plan.variation}
-          name="plan"
-          payment={plan.payment}
-          checked={plan.variation === userPlan.type}
-        />
-      ))}
+      <div className={classes["plan-button__container"]}>
+        {planVariations.map((plan, index) => (
+          <PlanButton
+            onChange={() =>
+              dispatch(
+                saveUserPlanSelection({
+                  type: plan.variation,
+                  payment:
+                    inputSwitch.clicked === true
+                      ? plan.payment * 10
+                      : plan.payment,
+                })
+              )
+            }
+            id="radio-button"
+            type="radio"
+            key={index}
+            image={plan.image}
+            value={plan.variation}
+            name="plan"
+            payment={plan.payment}
+            checked={plan.variation === userPlan.type}
+          />
+        ))}
+      </div>
       <div>
         <InputSwitch
           checked={inputSwitch.clicked}

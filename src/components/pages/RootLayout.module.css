@@ -12,8 +12,7 @@
   .page {
     display: flex;
     flex-direction: row;
-    justify-content: right;
-    margin-right: 10rem;
+    justify-content: center;
   }
 
   .card-header__wrapper {
