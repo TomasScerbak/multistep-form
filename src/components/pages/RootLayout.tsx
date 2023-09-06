@@ -59,7 +59,7 @@ const RootLayout = () => {
           <div className={classes.page}>{pageChange()}</div>
           {userWidth > 760 ? (
             <section className={classes["footer__section"]}>
-              {page !== 0 && page < 4 ? (
+              {page < 4 ? (
                 <ButtonSecondary
                   text="Go Back"
                   disabled={page === 0}
@@ -83,7 +83,7 @@ const RootLayout = () => {
       {userWidth < 760 ? (
         <footer>
           <section className={classes["footer__section"]}>
-            {page !== 0 && page < 4 ? (
+            {page < 4 ? (
               <ButtonSecondary
                 text="Go Back"
                 disabled={page === 0}
