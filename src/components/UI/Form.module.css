@@ -42,4 +42,8 @@
   .form__control-label {
     margin-bottom: 0.8rem;
   }
+
+  .error {
+    font-size: 1.4rem;
+  }
 }
