@@ -57,27 +57,29 @@ const RootLayout = () => {
             <h1 className={classes["card__header"]}>{formTitles[page]}</h1>
           </header>
           <div className={classes.page}>{pageChange()}</div>
-          {userWidth > 760 ? (
-            <section className={classes["footer__section"]}>
-              {page < 4 ? (
-                <ButtonSecondary
-                  text="Go Back"
-                  disabled={page === 0}
-                  onClick={() => setPage((currPage) => currPage - 1)}
-                ></ButtonSecondary>
-              ) : (
-                <div></div>
-              )}
-              {page < 4 ? (
-                <ButtonPrimary
-                  disabled={page === formTitles.length - 1}
-                  onClick={() => setPage((currPage) => currPage + 1)}
-                >
-                  {page === 3 ? "Confirm" : "Next Step"}
-                </ButtonPrimary>
-              ) : null}
-            </section>
-          ) : null}
+          <footer className={classes.footer}>
+            {userWidth > 760 ? (
+              <section className={classes["footer__section"]}>
+                {page < 4 ? (
+                  <ButtonSecondary
+                    text="Go Back"
+                    disabled={page === 0}
+                    onClick={() => setPage((currPage) => currPage - 1)}
+                  ></ButtonSecondary>
+                ) : (
+                  <div></div>
+                )}
+                {page < 4 ? (
+                  <ButtonPrimary
+                    disabled={page === formTitles.length - 1}
+                    onClick={() => setPage((currPage) => currPage + 1)}
+                  >
+                    {page === 3 ? "Confirm" : "Next Step"}
+                  </ButtonPrimary>
+                ) : null}
+              </section>
+            ) : null}
+          </footer>
         </Card>
       </Container>
       {userWidth < 760 ? (
