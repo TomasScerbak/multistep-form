@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/TomasScerbak/multistep-form.git)
-- Live Site URL: [Add live site URL here](https://leafy-lolly-1f54d2.netlify.app)
+- Solution URL: [https://github.com/TomasScerbak/multistep-form.git]
+- Live Site URL: [https://leafy-lolly-1f54d2.netlify.app]
 
 ## My process
 
@@ -47,5 +47,5 @@ Users should be able to:
 
 ## Author
 
-- Website - [Tomas Scerbak](https://www.frontendmentor.io/home)
+- Website - [Tomas Scerbak](https://sweet-cat-91a83d.netlify.app)
 - Frontend Mentor - [@TomasScerbak](https://www.frontendmentor.io/profile/TomasScerbak)
