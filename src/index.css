@@ -27,7 +27,7 @@ html {
   --alabaster: hsl(231, 100%, 99%);
   --white: hsl(0, 0%, 100%);
 
-  --ff-ubuntu: font-family: 'Ubuntu', sans-serif;
+  --ff-ubuntu: "Ubuntu", sans-serif;
 }
 
 body {
